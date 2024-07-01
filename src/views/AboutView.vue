@@ -3,7 +3,7 @@
   <div class="about">
     <div class="image-background" :style="{ backgroundImage: `url(${imageUrl})` }">
 
-      <h2 id="about">ABOUT</h2 >
+      <h2 id="about" class="animate__animated animate__slideInLeft">ABOUT</h2 >
         <div id="backgroundd" class="container rounded p-4 bg-opacity-25" >
             <div class="row d-flex align-items-right">
               <div class="col-md-6">
@@ -31,6 +31,9 @@ export default {
 }
 </script>
 <style scoped>
+
+@import '~animate.css/animate.min.css';
+
 .about {
   height: 100vh;
   margin: 0;

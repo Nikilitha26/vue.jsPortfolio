@@ -142,7 +142,7 @@ export default {
   #custom-image, #custom-image2 {
     margin: 0 70px;
   }
-@import '~animate.css/animate.min.css';
+
   .slide-from-left {
   animation: slide-from-left 1s forwards;
 }
