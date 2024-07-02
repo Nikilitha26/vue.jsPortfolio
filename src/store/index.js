@@ -3,7 +3,8 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     projects: null,
-    resume: null,
+    education: null,
+    skills: null,
     testimonials: null,
   },
   getters: {
@@ -12,8 +13,11 @@ export default createStore({
     setProjects(state,payload){
       state.projects = payload
     },
-    setResume(state,payload){
-      state.resume = payload
+    setEducation(state,payload){
+      state.education = payload
+    },
+    setSkills(state,payload){
+      state.skills = payload
     },
     setTestimonials(state,payload){
       state.testimonials = payload
@@ -21,11 +25,12 @@ export default createStore({
   },
   actions: {
     async getData({commit}){
-      let fetchedData = await fetch('https://nikilitha26.github.io/firstAPI/data/jdata.json')
+      let fetchedData = await fetch('https://nikilitha26.github.io/vue.js-API/API/data.json')
       let data = await fetchedData.json()
-      let {projects, resume, testimonials} = data
+      let {projects, education,skills, testimonials} = data
       commit('setProjects', projects)
-      commit('setResume', resume)
+      commit('setEducation', education)
+      commit('setSkills', skills)
       commit('setTestimonials', testimonials)
     }
   },

@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <div class="projects">
       <div class="image-background" :style="{ backgroundImage: `url(${imageUrl})` }">
-        <h2 id="products" class="animate__animated animate__slideInLeft">PRODUCTS</h2>
+        <h2 id="products" class="animate__animated animate__slideInLeft">PROJECTS</h2>
 
         <div class="container">
           <div class="row">

@@ -4,7 +4,7 @@
       <div class="content">
      
         <div class="sparkle-wrapper">
-  <img id="profile-photo" src="https://nikilitha26.github.io/Boot-img/Image/IMG_8063.PNG" alt="Profile Photo" class="img-fluid border border-danger-subtle border border-5 rounded-circle">
+  <img id="profile-photo" src="https://nikilitha26.github.io/Boot-img/Image/IMG_8063.PNG" alt="Profile Photo" class="img-fluid  border-5 rounded-circle">
   <div class="sparkle" style="top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
   <div class="sparkle" style="top: 25%; left: 75%;"></div>
   <div class="sparkle" style="top: 75%; left: 75%;"></div>
@@ -12,10 +12,10 @@
   <div class="sparkle" style="top: 75%; left: 25%;"></div>
 </div>
         <div id="text" class="align-middle"></div>
-        <span id="niki" class="align-middle">Hello! I am </span>
+        <span id="niki" class="align-middle">Hello! I am </span> <br>
         <h3 id="name" class="fw-bolder fs-1">NIKILITHA KAKAZA</h3>
         <div class="profile-titles">
-          <h3 id="profile-title-left" class="animate__animated animate__slideInLeft"> ~ASPIRING</h3>
+          <h3 id="profile-title-left" class="animate__animated animate__slideInLeft">~ASPIRING</h3>
           <h3 id="profile-title-right" class="animate__animated animate__slideInRight">WEB DEVELOPER~</h3>
         </div>
       
@@ -25,12 +25,12 @@
             <div id="row" class="row">
                 <div id="icon" class="col-md-6">
                   <a href="https://www.linkedin.com/in/nikilitha-kakaza-5a86462b9/">
-                    <img id="custom-image" src="https://nikilitha26.github.io/Boot-img/Image/linkedin_black_logo_icon_147114.png " alt="icon animate__animated animate__heartBeat" class="img-fluid border border-danger-subtle border border-5 rounded-circle custom-image" >
+                    <img id="custom-image" src="https://nikilitha26.github.io/Boot-img/Image/linkedin_black_logo_icon_147114.png " alt="icon animate__animated animate__heartBeat" class="img-fluid border-5 rounded-circle custom-image" >
                   </a>
                 </div>
                 <div id="icon2" class="col-md-6">
                   <a href="https://github.com/Nikilitha26">
-                    <img id="custom-image2" src="https://nikilitha26.github.io/Boot-img/Image/25231.png" alt="icon" class="img-fluid border border-danger-subtle border border-5 rounded-circle custom-image2">
+                    <img id="custom-image2" src="https://nikilitha26.github.io/Boot-img/Image/25231.png" alt="icon" class="img-fluid  border-5 rounded-circle custom-image2">
                   </a>
                 </div>
             </div>
@@ -92,7 +92,7 @@ export default {
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #D4AF37
+  border: 5px solid #D4AF37;
 }
 
 #custom-image2 {
@@ -116,7 +116,7 @@ export default {
 }
 #profile-title-right {
     position: relative;
-    left: -45px;
+    left: -57px;
     color: #D4AF37;
     font-size: 20px;
     font-weight: 600;

@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar">
       <div class="container">
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="../views/HomeView.vue">
           <img src="https://raw.githubusercontent.com/Nikilitha26/vue.jsImages/a7f6f8a62b52952ca6852dd596822bb78b5cb629/Portfolio__2_-removebg-preview.png" alt="Logo" width="190" height="190">
         </a>
         <ul class="nav-links">
@@ -15,8 +15,8 @@
       </div>
     </nav>
   </template>
-    
     <script>
+
     export default {
      
     }
