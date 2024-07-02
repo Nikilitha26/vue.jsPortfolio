@@ -7,12 +7,12 @@
             <div id="row" class="row">
                 <div id="icon" class="col-md-6">
                   <a href="https://www.linkedin.com/in/nikilitha-kakaza-5a86462b9/">
-                    <img id="custom-image" src="https://nikilitha26.github.io/Boot-img/Image/linkedin_black_logo_icon_147114.png " alt="icon animate__animated animate__heartBeat" class="img-fluid border border-danger-subtle border border-5 rounded-circle custom-image" >
+                    <img id="custom-image" src="https://nikilitha26.github.io/Boot-img/Image/linkedin_black_logo_icon_147114.png " alt="icon animate__animated animate__heartBeat" class="img-fluid  border-5 rounded-circle custom-image" >
                   </a>
                 </div>
                 <div id="icon2" class="col-md-6">
                   <a href="https://github.com/Nikilitha26">
-                    <img id="custom-image2" src="https://nikilitha26.github.io/Boot-img/Image/25231.png" alt="icon" class="img-fluid border border-danger-subtle border border-5 rounded-circle custom-image2">
+                    <img id="custom-image2" src="https://nikilitha26.github.io/Boot-img/Image/25231.png" alt="icon" class="img-fluid border-5 rounded-circle custom-image2">
                   </a>
                 </div>
             </div>
@@ -39,7 +39,9 @@ export default {
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #D4AF37
+  border: 5px solid #D4AF37;
+  position: relative;
+  right: -300px;
 }
 
 #custom-image2 {
@@ -48,6 +50,8 @@ export default {
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid #D4AF37;
+  position: relative;
+  left: -300px;
 }
 #row{
     display: flex;

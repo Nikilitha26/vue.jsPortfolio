@@ -31,7 +31,7 @@ const routes = [
   },
 
   {
-    path: '/testimonials',
+    path: '/testimonial',
     name: 'testimonials',
     component: TestimonialsView
   },
