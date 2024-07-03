@@ -50,7 +50,7 @@ export default {
     position: relative;
     bottom: 170px;
     left: 700px;
-    font-size: 40px;
+    font-size: 40px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
     color: #D4AF37;
     text-decoration: underline;
