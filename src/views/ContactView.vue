@@ -24,11 +24,11 @@
             <form @submit.prevent="formSubmit">
               <h2 id="any">ANY QUESTIONS?</h2><br>
               <label id="text">First name: </label><br>
-              <input id="input" type="text" required v-model="firstName" placeholder="First Name..."><br>
+              <input id="input" type="text" v-model="firstName" placeholder="First Name..."><br>
               <label id="text">Last name: </label><br>
-              <input id="input" type="text" required v-model="lastName" placeholder="Last Name..."><br>
+              <input id="input" type="text" v-model="lastName" placeholder="Last Name..."><br>
               <label id="text">Email adress: </label><br>
-              <input id="input" type="email" required v-model="email" placeholder="Email..."><br>
+              <input id="input" type="email" v-model="email" placeholder="Email..."><br>
               <label id="text">Message: </label><br>
               <textarea id="inputs" v-model="message" placeholder="Your message here..."></textarea><br><br>
               <button type="submit">Send</button>
@@ -60,16 +60,22 @@
         message: ''
       }
     },
-    methods: {
-  formSubmit() {
-    alert('Form submitted successfully!');
-    this.firstName = '';
-    this.lastName = '';
-    this.email = '';
-    this.message = '';
+      methods: {
+        formSubmit() {
+            if (this.firstName && this.lastName && this.email && this.message) {
+                alert('Form submitted successfully!👏');
+                this.firstName = '';
+                this.lastName = '';
+                this.email = '';
+                this.message = '';
+              } else {
+                event.preventDefault(); 
+                alert('Please fill in all fields!');
+            }
+        }
+    }
   }
-}
-  }
+
   </script>
   
   <style scoped>
@@ -207,6 +213,7 @@ button{
   }
   #inputs{
     width: 300px;
+    height: 75px;
     font-style: italic;
     color: #D4AF37;
     background-color: black;

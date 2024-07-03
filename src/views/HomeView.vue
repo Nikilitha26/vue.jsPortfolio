@@ -13,7 +13,7 @@
 </div>
         <div id="text" class="align-middle"></div>
         <span id="niki" class="align-middle">Hello! I am </span> <br>
-        <h3 id="name" class="fw-bolder fs-1">NIKILITHA KAKAZA</h3>
+        <h3 id="name" class=" fs-1">NIKILITHA KAKAZA</h3>
         <div class="profile-titles">
           <h3 id="profile-title-left" class="animate__animated animate__slideInLeft">~ASPIRING</h3>
           <h3 id="profile-title-right" class="animate__animated animate__slideInRight">WEB DEVELOPER~</h3>
@@ -107,7 +107,8 @@ export default {
     height: 12px; 
     font-size: 50px; 
     color: black;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
 }
 #profile-title-left {
     color: #D4AF37;
@@ -131,8 +132,8 @@ export default {
   flex: 1;
 }
 #name{
-  font-size: 35px;
   color: black;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
 }
 #row{
     display: flex;

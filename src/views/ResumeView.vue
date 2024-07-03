@@ -5,31 +5,52 @@
           Loading...
         </div>
 
-        <h2 id="education" class="animate__animated animate__slideInLeft">EDUCATION</h2>
+        <h2 id="education" class="animate__animated animate__slideInLeft">EDUCATION🎓</h2>
 
         <div class="education-cards">
           <div v-for="education in $store.state.education" :key="education.id" class="education-card">
             <h3 id="school" >{{ education.placeOfInstitution }}</h3>
-            <p>{{ education.year }}</p>
+            <p id="year">{{ education.year }}</p>
             <p>{{ education.description }}</p>
           </div>
         </div>
 
         
-        <div>
         <h2 id="skills" class="animate__animated animate__slideInLeft">SKILLS</h2>
-        <div class="skills-container">
-          <div v-for="skill in $store.state.skills" :key="skill.id" class="skills-card">
+      
+        <swiper
+        ref="swiperRef"
+        :slidesPerView="3"
+        :centeredSlides="true"
+        :spaceBetween="30"
+        :pagination="{
+          type: 'fraction',
+        }"
+        :navigation="true"
+        :modules="modules"
+        class="mySwiper"
+      >
+        <swiper-slide v-for="skill in $store.state.skills" :key="skill.id">
+          <div class="skills-card">
             <img :src="skill.image" alt="Skill Image">
-            <p>{{ skill.name }}</p>
+            <p id="skil">{{ skill.name }}</p>
           </div>
-        </div>
-        </div>
-        </div>
-        </div>
+        </swiper-slide>
+      </swiper>
+
+    </div>
+  </div>
+
+       
+
   </template>
   
   <script>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Pagination, Navigation } from 'swiper/modules';
 
   export default {
     methods: {
@@ -49,11 +70,79 @@
         slide: 0,
       }
     },
+    components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    return {
+      modules: [Pagination, Navigation],
+    };
+  },
   }
   
   </script>
   
   <style scoped>
+.swiper {
+  width: 500px;
+  height: 100px;
+
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: none;
+  width: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin: 100px -180px;
+  color: #D4AF37;
+  --swiper-navigation-color:#D4AF37 ;
+}
+.append-buttons {
+  text-align: center;
+  margin-top: 20px;
+  width: 70px;
+  color: #D4AF37;
+  font-weight: bolder;
+}
+
+.append-buttons button {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #D4AF37;
+  color: #D4AF37;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin: 0 10px;
+  font-size: 13px;
+  font-weight: bolder;
+}
+.mySwiper{
+  position: relative;
+  right: 690px;
+  width: 700px;
+  top: 270px;
+  color: #D4AF37;
+  font-weight: bolder
+}
+
 @import '~animate.css/animate.min.css';
 
   .resume {
@@ -77,7 +166,6 @@
     justify-content: center;
     margin-top: 100px;
     position: relative;
-    left: 410px;
   }
   
   .education-card {
@@ -97,52 +185,62 @@
   .education-card h3 {
     margin-top: 0;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: bolder;
   }
   
   .education-card p {
     margin-bottom: 10px;
     font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   #education {
     position: relative;
     bottom: 350px;
-    left: 1100px;
+    left: 700px;
     font-size: 35px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
     color: #D4AF37;
     text-decoration: underline;
 }
+#year{
+  font-weight: bold;
+}
   #skills{
     position: relative;
-    top: 170px;
-    right:640px;
+    top: 70px;
+    right:540px;
     font-size: 35px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
     color: #D4AF37;
     text-decoration: underline;
+}
+#skil{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .skills-container {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 120px;
     position: relative;
     right: 660px;
-    top: 180px;
+
   }
   
   .skills-card {
     display: inline-block;
     margin: 40px 40px;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #D4AF37;
     border-radius: 10px;
     background-color: white;
     width: 150px;
   }
   
   .skills-card img {
+    justify-content: center;
     width: 50px;
     height: 50px;
     margin-bottom: 10px;

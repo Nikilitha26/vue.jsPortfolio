@@ -2,13 +2,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <div class="projects">
       <div class="image-background" :style="{ backgroundImage: `url(${imageUrl})` }">
-        <h2 id="products" class="animate__animated animate__slideInLeft">PROJECTS</h2>
+        <h2 id="projects" class="animate__animated animate__slideInLeft">PROJECTS<br>👩🏻‍💻</h2>
 
         <div class="container">
           <div class="row">
             <div v-for="project in $store.state.projects" :key="project.id" class="col-md-4">
                 <div id="carrd" class="card mb-4">
-                  <img id="projjects" :src="project.image" alt="Project Image" class="img-fluid">
+                  <img id="projjects" :src="project.image" alt="Project Image" class="img-fluid flip"><br>
                 <h5 class="card-title">{{ project.name }}</h5>
                 <div class="card-body">
                   <p id="card-text" class="card-text">{{ project.description }}</p>
@@ -54,7 +54,16 @@ export default {
   height: 100%;
   margin: 0;
 }
+.card-title{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bolder;
+ 
+}
+.card-text{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
 
+}
 .image-background {
   height: 100%;
   background-size: cover;
@@ -74,11 +83,12 @@ export default {
 }
 
 
-#products {
+#projects {
     position: relative;
     bottom: 590px;
     left: 640px;
     font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
     color: #D4AF37;
     text-decoration: underline;
@@ -98,10 +108,11 @@ export default {
   height: 200px;
   transition: transform 0.5s;
 }
-#projjects:hover {
-        transform: rotate(360deg); 
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
-}
+#projjects.flip:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: 0.7s;
+  }
     
 
    
