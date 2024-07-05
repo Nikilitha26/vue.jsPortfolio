@@ -65,4 +65,31 @@ export default {
   justify-content: center;
   align-items: center;
 }
+/* Add media queries for responsiveness */
+@media only screen and (max-width: 300px) {
+  .footer {
+    padding: 0.5rem;
+  }
+  #custom-image, #custom-image2 {
+    width: 30px;
+    height: 30px;
+    right: -10px; /* adjust the right/left values to fit your design */
+    left: -10px;
+    display: inline;
+  }
+  /* #custom-image{
+    margin-left: -10px;
+  } */
+  #custom-image2{
+    /* left: -10px; */
+    margin-right: 70px;
+    position: relative;
+    bottom: 30px;
+  }
+  #row {
+    flex-direction: row; /* stack the icons vertically on small screens */
+    position:relative;
+    left: 30px;
+  }
+}
 </style>

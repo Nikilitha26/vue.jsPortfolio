@@ -63,15 +63,64 @@ export default {
     height: 390px; 
     margin-top: 30px;
     right: 70px;
+    box-shadow: 8px 8px 8px rgba(255, 210, 11, 0.5);
+    transition: transform 0.7s ease-out;
+}
+#backgroundd:hover  {
+    background-color: #D4AF37;
+    color: bisque; 
+    box-shadow: 8px 8px 8px rgba(255, 210, 11, 0.5);
+    transform: scale(1.1) ;
+  transition: transform 0.7s ease-out;
+}
+#backgroundd:hover #description {
+  color: white; 
 }
 #description {
     margin-right: 50px;
     font-style: italic;
     color: #D4AF37;
+    text-shadow: 2px 2px 4px rgba(141, 117, 11, 0.5);
 }
+
 .img-fluid-sqare{
   position: relative;
   top: 25px;
   right: 50px;
+}
+/* Media queries for 300px screen */
+@media only screen and (max-width: 300px) {
+  .about {
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+  }
+  .image-background {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #about {
+    font-size: 24px;
+    left: 0;
+    bottom: 100px;
+  }
+  #backgroundd {
+    height: 250px;
+    margin-top: 20px;
+    right: 0;
+  }
+  #description {
+    margin-right: 20px;
+    font-size: 16px;
+  }
+  .img-fluid-sqare {
+    width: 10px;
+    height: 10px;
+    margin-left: 50px;
+  }
 }
 </style>

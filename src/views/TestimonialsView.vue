@@ -6,7 +6,6 @@
           <swiper 
             :effect="'flip'"
             :grabCursor="true"
-            :pagination="true"
             :navigation="true"
             :modules="modules"
             :centeredSlides="true"
@@ -115,7 +114,7 @@
   .card {
     margin-bottom: 20px;
     width: 350px;
-
+    box-shadow: 6px 6px 6px rgba(255, 255, 255, 0.5);
   }
   .card-img-top{
       height: 290px;
@@ -137,16 +136,12 @@
   padding: 120px;
   bottom: 60px;
   --swiper-navigation-color: white;
-  --swiper-navigation: 70px;
+  --swiper-navigation-margin-top: 70px;
 }
 
-.mySwiper{
-    --swiper-pagination-color: transparent;
-    /* --swiper-pagination-margin: 10px 20px 20px; */
-}
-.mySwiper.swiper-pagination {
+.mySwiper .swiper-navigation {
   position: absolute;
-  bottom: 20px; /* adjust the value to your liking */
+  top: 80px; 
   left: 50%;
   transform: translateX(-50%);
 }

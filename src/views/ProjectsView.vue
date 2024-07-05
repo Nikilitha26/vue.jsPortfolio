@@ -13,8 +13,8 @@
                 <div class="card-body">
                   <p id="card-text" class="card-text">{{ project.description }}</p>
                   <p class="card-text">
-                    <a :href="project.github" target="_blank"><img id="icongit" class="animate__animated animate__rubberBand" src="https://raw.githubusercontent.com/Nikilitha26/vue.jsImages/1a7775df88538582dec5b01d37c3f33e483b4f49/25231.png"></a>
-                    <a :href="project.vercel" target="_blank"><img id="iconvercel" class="animate__animated animate__rubberBand"  src="https://raw.githubusercontent.com/Nikilitha26/vue.jsImages/1a7775df88538582dec5b01d37c3f33e483b4f49/vercel-logo-removebg-preview.png" alt=""></a>
+                    <a :href="project.github" target="_blank"><img id="icongit" class="animate__animated animate__pulse animate__repeat animate__infinite" src="https://raw.githubusercontent.com/Nikilitha26/vue.jsImages/1a7775df88538582dec5b01d37c3f33e483b4f49/25231.png"></a>
+                    <a :href="project.vercel" target="_blank"><img id="iconvercel" class="animate__animated animate__pulse animate__repeat animate__infinite"  src="https://raw.githubusercontent.com/Nikilitha26/vue.jsImages/1a7775df88538582dec5b01d37c3f33e483b4f49/vercel-logo-removebg-preview.png" alt=""></a>
                   </p>
                 </div>
               </div>
@@ -80,6 +80,7 @@ export default {
 }
 .card {
   margin: 10px;
+  box-shadow: 6px 6px 6px rgba(255, 210, 11, 0.5);
 }
 
 
@@ -107,6 +108,7 @@ export default {
 #projjects{
   height: 200px;
   transition: transform 0.5s;
+  transition: transform 0.7s ease-out
 }
 #projjects.flip:hover {
   transform: scale(1.1);

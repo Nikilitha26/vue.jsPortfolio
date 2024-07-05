@@ -15,9 +15,14 @@
           </div>
         </div>
 
-        
+        <div class="download-cv-btn">
+            <a href="https://nikilitha26.github.io/vue.jsImages/Curriculum%20Vitae%20Of%20Nikilitha%20Kakaza%20.pdf" download>
+              <button id="btn" class="animate__animated animate__pulse animate__repeat animate__infinite">Download CV</button>
+            </a>
+          </div>
+        <div>
         <h2 id="skills" class="animate__animated animate__slideInLeft">SKILLS</h2>
-      
+      <div class="slills-container">
         <swiper
         ref="swiperRef"
         :slidesPerView="3"
@@ -29,7 +34,9 @@
         :navigation="true"
         :modules="modules"
         class="mySwiper"
-      >
+      ><div class="swiper-navigation">
+
+      </div>
         <swiper-slide v-for="skill in $store.state.skills" :key="skill.id">
           <div class="skills-card">
             <img :src="skill.image" alt="Skill Image">
@@ -37,7 +44,8 @@
           </div>
         </swiper-slide>
       </swiper>
-
+      </div>
+</div>
     </div>
   </div>
 
@@ -84,12 +92,6 @@ import { Pagination, Navigation } from 'swiper/modules';
   </script>
   
   <style scoped>
-.swiper {
-  width: 500px;
-  height: 100px;
-
-}
-
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -99,7 +101,9 @@ import { Pagination, Navigation } from 'swiper/modules';
   justify-content: center;
   align-items: center;
 }
-
+.swiper-navigation{
+  widows: 200px;
+}
 .swiper-slide img {
   display: block;
   width: 100%;
@@ -108,11 +112,12 @@ import { Pagination, Navigation } from 'swiper/modules';
 }
 
 .swiper {
-  width: 100%;
+  width: -900px;
   height: 300px;
   margin: 100px -180px;
   color: #D4AF37;
   --swiper-navigation-color:#D4AF37 ;
+  --swiper-navigation-width: 700px;
 }
 .append-buttons {
   text-align: center;
@@ -136,7 +141,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 }
 .mySwiper{
   position: relative;
-  right: 690px;
+  right: 870px;
   width: 700px;
   top: 270px;
   color: #D4AF37;
@@ -179,9 +184,15 @@ import { Pagination, Navigation } from 'swiper/modules';
     flex: 1; 
     position: relative;
     bottom: 200px;
-    left: 60px;
+    left: 130px;
+    box-shadow: 6px 6px 6px rgba(255, 210, 11, 0.5);
+    transition: transform 0.7s ease-out
   }
-  
+  .education-card:hover{
+    transform: scale(1.1);
+    transition: 0.7s;
+  }
+
   .education-card h3 {
     margin-top: 0;
     font-size: 20px;
@@ -196,7 +207,7 @@ import { Pagination, Navigation } from 'swiper/modules';
   #education {
     position: relative;
     bottom: 350px;
-    left: 700px;
+    left: 900px;
     font-size: 35px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
@@ -208,8 +219,8 @@ import { Pagination, Navigation } from 'swiper/modules';
 }
   #skills{
     position: relative;
-    top: 70px;
-    right:540px;
+    top: 390px;
+    right:820px;
     font-size: 35px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
@@ -237,6 +248,7 @@ import { Pagination, Navigation } from 'swiper/modules';
     border-radius: 10px;
     background-color: white;
     width: 150px;
+    box-shadow: 6px 6px 6px rgba(255, 210, 11, 0.5);
   }
   
   .skills-card img {
@@ -245,4 +257,27 @@ import { Pagination, Navigation } from 'swiper/modules';
     height: 50px;
     margin-bottom: 10px;
   }
+  #btn {
+  text-align: center;
+  margin-top: 20px;
+  position: relative;
+  top: 45px;
+  right: 590px;
+  width: 120px;
+}
+
+#btn {
+  background-color: #D4AF37;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#btn:hover {
+  background-color: #fff;
+  color: #D4AF37;
+}
   </style>

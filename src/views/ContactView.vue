@@ -4,7 +4,7 @@
         <div class="row">
           <div id="col" class="col-md-6">
             <div id="pics" class="d-flex align-items-center">
-              <img id="pic1" :src="image1" alt="Image 1" class=" animate__animated animate__headShake">
+              <img id="pic1" :src="image1" alt="Image 1" class="animate__animated animate__tada animate__repeat animate__infinite">
               <p id="pe1">+27 82 402 1820</p>
             </div>
             <div class="d-flex align-items-center">
@@ -21,16 +21,17 @@
             </div>
           </div>
           <div class="col-md-6" id="que">
-            <form @submit.prevent="formSubmit">
+            <form action="https://formspree.io/f/xanwydyn"
+            method="POST" @submit.prevent="formSubmit">
               <h2 id="any">ANY QUESTIONS?</h2><br>
               <label id="text">First name: </label><br>
-              <input id="input" type="text" v-model="firstName" placeholder="First Name..."><br>
+              <input id="input" type="text" name="first-name" v-model="firstName" placeholder="First Name..."><br>
               <label id="text">Last name: </label><br>
-              <input id="input" type="text" v-model="lastName" placeholder="Last Name..."><br>
+              <input id="input" type="text" name="last-name" v-model="lastName" placeholder="Last Name..."><br>
               <label id="text">Email adress: </label><br>
-              <input id="input" type="email" v-model="email" placeholder="Email..."><br>
+              <input id="input" type="email" name="email" v-model="email" placeholder="Email..."><br>
               <label id="text">Message: </label><br>
-              <textarea id="inputs" v-model="message" placeholder="Your message here..."></textarea><br><br>
+              <textarea id="inputs" name="message" v-model="message" placeholder="Your message here..."></textarea><br><br>
               <button type="submit">Send</button>
             </form>
             <div v-if="false">
@@ -84,7 +85,10 @@
     height: 90vh;
     margin: 0;
   }
-  
+  button:hover{
+    background-color: white;
+    color: #D4AF37;
+  }
   .image-background {
     height: 100%;
     background-size: cover;
@@ -209,7 +213,7 @@ button{
     width: 300px;
     background-color: black;
     font-size: 13px;
-
+    box-shadow: 6px 6px 6px rgba(255, 210, 11, 0.5);
   }
   #inputs{
     width: 300px;
@@ -218,6 +222,7 @@ button{
     color: #D4AF37;
     background-color: black;
     font-size: 13px;
+    box-shadow: 6px 6px 6px rgba(255, 210, 11, 0.5);
   }
   ::placeholder{
     color: #D4AF37;

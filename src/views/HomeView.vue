@@ -1,4 +1,5 @@
 <template>
+
   <div class="home">
     <div class="image-background" :style="{ backgroundImage: `url(${imageUrl})` }">
       <div class="content">
@@ -13,32 +14,33 @@
 </div>
         <div id="text" class="align-middle"></div>
         <span id="niki" class="align-middle">Hello! I am </span> <br>
-        <h3 id="name" class=" fs-1">NIKILITHA KAKAZA</h3>
+        <h3 id="name" class=" fs-1">NIKILITHA KAKAZA</h3> 
         <div class="profile-titles">
           <h3 id="profile-title-left" class="animate__animated animate__slideInLeft">~ASPIRING</h3>
           <h3 id="profile-title-right" class="animate__animated animate__slideInRight">WEB DEVELOPER~</h3>
-        </div>
+        </div> <br>
       
-        
-        
         <div class="container">
-            <div id="row" class="row">
-                <div id="icon" class="col-md-6">
-                  <a href="https://www.linkedin.com/in/nikilitha-kakaza-5a86462b9/">
-                    <img id="custom-image" src="https://nikilitha26.github.io/Boot-img/Image/linkedin_black_logo_icon_147114.png " alt="icon animate__animated animate__heartBeat" class="img-fluid border-5 rounded-circle custom-image" >
-                  </a>
-                </div>
-                <div id="icon2" class="col-md-6">
-                  <a href="https://github.com/Nikilitha26">
-                    <img id="custom-image2" src="https://nikilitha26.github.io/Boot-img/Image/25231.png" alt="icon" class="img-fluid  border-5 rounded-circle custom-image2">
-                  </a>
-                </div>
+          <div id="row" class="row">
+            <div id="icon" class="col-md-6">
+              <a href="https://www.linkedin.com/in/nikilitha-kakaza-5a86462b9/">
+                <img id="custom-image" src="https://nikilitha26.github.io/Boot-img/Image/linkedin_black_logo_icon_147114.png " alt="" class="img-fluid border-5 rounded-circle custom-image" >
+              </a>
             </div>
+            <div id="icon2" class="col-md-6">
+              <a href="https://github.com/Nikilitha26">
+                <img id="custom-image2" src="https://nikilitha26.github.io/Boot-img/Image/25231.png" alt="icon" class="img-fluid  border-5 rounded-circle custom-image2">
+              </a>
+            </div>
+          </div>
+          <div class="download-cv-btn">
+            <a href="https://nikilitha26.github.io/vue.jsImages/Curriculum%20Vitae%20Of%20Nikilitha%20Kakaza%20.pdf" download>
+              <button id="btn" class="animate__animated animate__pulse animate__repeat animate__infinite">Download CV</button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-
-  </div>
-
   </div>
 </template>
 
@@ -101,6 +103,27 @@ export default {
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid #D4AF37;
+}
+#btn {
+  text-align: center;
+  margin-top: 20px;
+  position: relative;
+  bottom: 65px;
+}
+
+#btn {
+  background-color: #D4AF37;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#btn:hover {
+  background-color: #fff;
+  color: #D4AF37;
 }
 #niki{
     width: 108px; 
@@ -190,6 +213,8 @@ export default {
 }
 .sparkle-wrapper {
   position: relative;
+  width: 300px;
+  
 }
 
 .sparkle {
@@ -245,4 +270,61 @@ export default {
     opacity: 0.5;
   }
 }
+
+  /* For screens smaller than 300px */
+  @media (max-width: 300px) {
+   .image-background {
+      height: 120vh;
+      width: 300px;
+    }
+   .content {
+      padding: 8px;
+    }
+    #profile-photo {
+      width: 100px;
+      height: 100px;
+      margin-top: 15px;
+    }
+    .profile-titles{
+      font-size: -200px;
+    }
+    #profile-title-left{
+      font-size: -2px;
+      margin-bottom: 70px;
+      position: relative;
+      left: 80px;
+    }
+   
+    #custom-image, #custom-image2 {
+      width: 25px;
+      height: 25px;
+      margin: 0 10px;
+    }
+    #btn {
+      font-size: 10px;
+      padding: 2px 2px;
+    }
+  }
+  #custom-image2{
+    position: relative;
+    bottom: -4px;
+    left: 30px;
+  }
+  #custom-image{
+    position: relative;
+    right: 30px;
+  }
+  #row {
+    flex-direction: row;
+    align-items: center;
+  }
+  #icon, #icon2 {
+    margin: 1px 0;
+  }
+  #btn {
+    margin-top: 20px;
+  }
+
+
+
 </style>

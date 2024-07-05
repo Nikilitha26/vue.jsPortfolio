@@ -1,21 +1,46 @@
 <template>
   <div>
-    <NavbarComponents/>
+    <NavbarComponents v-if="!loading" />
     <router-view />
-    <FooterComponent />
+    <FooterComponent v-if="!loading" />
+    <LoaderComponent v-if="loading" />
   </div>
 </template>
 
 <script>
 import NavbarComponents from '../src/components/NavbarComponent.vue'
 import FooterComponent from '../src/components/FooterComponent.vue'
+import LoaderComponent from './components/LoaderComponent.vue'
+
 export default {
   components: {
     NavbarComponents,
     FooterComponent,
+    LoaderComponent,
+  },
+  data() {
+    return {
+      loading: false,
+    }
+  },
+  mounted() {
+    this.fetchData();
+  },
+  methods: {
+    fetchData() {
+      this.loading = true;
+      // make API call or perform some async operation
+      setTimeout(() => {
+        this.loading = false;
+      }, 2000); // simulate a 2-second delay
+    }
   }
 }
 </script>
+
+<style>
+/* your styles here */
+</style>
 
 <style>
 
