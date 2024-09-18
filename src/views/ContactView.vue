@@ -1,243 +1,399 @@
 <template>
-    <div class="contact">
-      <div class="image-background" :style="{ backgroundImage: `url(${imageUrl})` }">
-        <div class="row">
-          <div id="col" class="col-md-6">
-            <div id="pics" class="d-flex align-items-center">
-              <img id="pic1" :src="image1" alt="Image 1" class="animate__animated animate__tada animate__repeat animate__infinite">
-              <p id="pe1">+27 82 402 1820</p>
-            </div>
-            <div class="d-flex align-items-center">
-              <img id="pic2" :src="image2" alt="Image 2">
-              <p id="pe2">+27 82 402 1820</p>
-            </div>
-            <div class="d-flex align-items-center">
-              <img id="pic3" :src="image3" alt="Image 3">
-              <p id="pe3" class="mr-5">kakazanikilitha544@gmail.com</p>
-            </div>
-            <div class="d-flex align-items-center">
-              <img id="pic5" :src="image5" alt="Image 3">
-              <p id="pe5" class="mr-5">Khayelitsha, Cape Town, Western Cape, 7784</p>
-            </div>
-          </div>
-          <div class="col-md-6" id="que">
-            <form action="https://formspree.io/f/xanwydyn"
-            method="POST" @submit.prevent="formSubmit">
-              <h2 id="any">ANY QUESTIONS?</h2><br>
-              <label id="text">First name: </label><br>
-              <input id="input" type="text" name="first-name" v-model="firstName" placeholder="First Name..."><br>
-              <label id="text">Last name: </label><br>
-              <input id="input" type="text" name="last-name" v-model="lastName" placeholder="Last Name..."><br>
-              <label id="text">Email adress: </label><br>
-              <input id="input" type="email" name="email" v-model="email" placeholder="Email..."><br>
-              <label id="text">Message: </label><br>
-              <textarea id="inputs" name="message" v-model="message" placeholder="Your message here..."></textarea><br><br>
-              <button type="submit">Send</button>
-            </form>
-            <div v-if="false">
-            <p>First name: {{ firstName }}</p>
-            <p>Last name: {{ lastName }}</p>
-            <p>Email: {{ email }}</p>
-            <p>Message: {{ message }}</p>
-          </div>
-          </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h2 class="contact">Contact Us</h2>
+        <div style="margin-bottom: 40px;"></div>
+        <ul class="list-unstyled">
+          <li>
+            <i class="fas fa-phone animate__animated animate__headShake animate__infinite "></i>
+            <span>+27 82 402 1820</span>
+          </li>
+          <li>
+            <i class="fas fa-envelope "></i>
+            <span>kakazanikilitha544@gmail.com</span>
+          </li>
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Khayeliysha, Site C, Western Cape, 7744</span>
+          </li>
+            <li class="center-icons">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/in/nikilitha-kakaza-5a86462b9/">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/your-github-profile">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-8">
+        <h2 id="get">Get in Touch</h2>
+        <form @submit.prevent="handleSubmit" action="https://formspree.io/f/xanwydyn" method="POST">
+          <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" id="firstName" placeholder="Enter your first name..." style="width: 70%" v-model="firstName">
+    <div v-if="errors.firstName" class="error">{{ errors.firstName }}</div>
+  </div>
+          <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" id="lastName" placeholder="Enter your last name..." style="width: 70%" v-model="lastName">
+    <div v-if="errors.lastName" class="error">{{ errors.lastName }}</div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter your email..." style="width: 70%" v-model="email">
+    <div v-if="errors.email" class="error">{{ errors.email }}</div>
+  </div>
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea class="form-control" id="message" placeholder="Enter your message..." style="width: 70%" v-model="message"></textarea>
+    <div v-if="errors.message" class="error">{{ errors.message }}</div>
+  </div>
+          <button type="submit" class="btn0">Submit</button>
+        </form>
       </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        imageUrl: 'https://raw.githubusercontent.com/Nikilitha26/vue.jsImages/8c8d5d155d446f2286d63e4a51a8516d143de490/896712.jpg',
-        image1: 'https://raw.githubusercontent.com/Nikilitha26/hostedImagesEndOfModule/e5e96cad2bf2012951ae147117657fb619a82f12/7ab4ecb0e584f36bd0285636e2272c2a-removebg-preview.png',
-        image2: 'https://raw.githubusercontent.com/Nikilitha26/hostedImagesEndOfModule/e5e96cad2bf2012951ae147117657fb619a82f12/download__2_-removebg-preview.png',
-        image3: 'https://raw.githubusercontent.com/Nikilitha26/hostedImagesEndOfModule/e5e96cad2bf2012951ae147117657fb619a82f12/email-icon-digital-marketing-icon-mail-icon-ULNU0Cne-removebg-preview.png',
-        image5: 'https://github.com/Nikilitha26/vue.jsImages/blob/main/png-transparent-instagram-icon-gold-home-instagram-icon-aesthetic-gold-icons-removebg-preview.png?raw=true',
-        firstName: '',
-        lastName: '',
-        email: '',
-        message: ''
+    <div class="popup-message" v-if="submitted">
+    <div class="popup-content">
+      <h2>Message submitted successfully!</h2>
+      <p>Thank you for reaching out to out. I will get back to you soon.</p>
+      <button @click="closePopup">Close</button>
+    </div>
+  </div>
+
+  </div>
+</template>
+
+<script>
+export default {
+  name: "ContactForm",
+  data() {
+    return {
+      submitted: false,
+      firstName: '',
+      lastName: '',
+      email: '',
+      message: '',
+      errors: {}
+    }
+  },
+  methods: {
+    handleSubmit() {
+      this.errors = {};
+      if (!this.firstName) {
+        this.errors.firstName = "First name is required";
+      }
+      if (!this.lastName) {
+        this.errors.lastName = "Last Name is required";
+      }
+      if (!this.email) {
+        this.errors.email = "Email is required";
+      }
+      if (!this.message) {
+        this.errors.message = "Message is required";
+      }
+      if (Object.keys(this.errors).length === 0) {
+        this.firstName = '';
+        this.lastName = '';
+        this.email = '';
+        this.message = '';
+        this.submitted = true;
       }
     },
-      methods: {
-        formSubmit() {
-            if (this.firstName && this.lastName && this.email && this.message) {
-                alert('Form submitted successfully!👏');
-                this.firstName = '';
-                this.lastName = '';
-                this.email = '';
-                this.message = '';
-              } else {
-                event.preventDefault(); 
-                alert('Please fill in all fields!');
-            }
-        }
+    closePopup() {
+      this.submitted = false;
+      this.$router.push({ name: 'home' });
     }
   }
-
-  </script>
+}
+</script>
   
   <style scoped>
-  @import '~animate.css/animate.min.css';
-  .contact {
-    height: 90vh;
-    margin: 0;
+  .center-icons {
+  display: flex;
+  justify-content: center;
+}
+.popup-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h2 {
+  margin-top: 0;
+}
+
+.popup-content button {
+  background-color: #b98E77;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background-color: #84614e;
+}
+    .error {
+    color: red;
   }
-  button:hover{
-    background-color: white;
-    color: #D4AF37;
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
   }
-  .image-background {
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  
+  .container {
+    width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    margin-top: 160px;
   }
   
   .row {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
   }
   
-  .col-md-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
+  .col-md-4 {
+    width: 50%;
   }
-  body{
-    height: 10px;
-    }
-#contacts{
-    font-size: 35px; 
-    color: #D4AF37;
-    position: relative;
-    left: 130px;
-    bottom: 200px;
-}
-#h6{
-    font-style: italic;
-    color: white;
-}
-
-#icon{
-    width: 80px; 
-    height: 80px; 
-    margin-right: 150px;
-}
-#icon2{
-    width: 80px; 
-    height: 80px; 
-    margin-left:150px ;
-}
-
-#pic1{
-    height: 80px;
-    width: 60px;
-    position: relative;
-    bottom: 90px;
-}
-#pic2{
-    height: 50px;
-    width: 50px;
-    position: relative;
-    bottom: 90px;
-    left: 10px;
-}
-#pic3{
-    width: 60px;
-    height: 70px;
-    position: relative;
-    bottom: 85px;
-    left: 10px;
-}
-
-
-#pic5{
-    height: 60px;
-    width: 60px;
-    position: relative;
-    bottom: 85px;
-    left: 5px;
-}
-#pic6{
-    height: 1px;
-}
-
-button{
-    background: #D4AF37;
-    color: white;
-    border: none;
-    width: 70px;
-    border-radius: 4px;
-}
-
-  #pe1{
-    position: relative;
-    left: 30px;
-    bottom: 80px;
-    color: #D4AF37;
-    font-weight: bolder;
+  
+  .col-md-8 {
+    width: 50%;
   }
-  #pe2{
+  
+  /* Social Media Icons */
+  .contact{
     position: relative;
-    left: 40px;
-    bottom: 80px;
-    color: #D4AF37;
-    font-weight: bolder;
+    right: 100px;
   }
-  #pe3{
-    position: relative;
-    left: 30px;
-    bottom: 80px;
-    color: #D4AF37;
-    font-weight: bolder;
+  ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
   }
-  #pe5{
-    position: relative;
-    left: 10px;
-    bottom: 70px;
-    color: #D4AF37;
-    font-weight: bolder;
+  
+  li {
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    margin-top: 40px; 
   }
-  #text{
-    color: #D4AF37;
-    font-weight: bolder;
+  
+  i {
+    font-size: 24px;
+    color: #b98E77;
+    margin-right: 10px;
   }
-  #input{
-    color: #D4AF37;
-    font-style: italic;
-    height: 35px;
-    width: 300px;
-    background-color: black;
-    font-size: 13px;
-    box-shadow: 6px 6px 6px rgba(255, 210, 11, 0.5);
+  
+  span {
+    color: #333;
   }
-  #inputs{
-    width: 300px;
-    height: 75px;
-    font-style: italic;
-    color: #D4AF37;
-    background-color: black;
-    font-size: 13px;
-    box-shadow: 6px 6px 6px rgba(255, 210, 11, 0.5);
+  
+  /* Form Styles */
+  .form-group {
+    margin-bottom: 20px;
   }
-  ::placeholder{
-    color: #D4AF37;
-  }
-#col{
-    position: relative;
-    top: 140px;
-    right: 290px;
-}
-#any{
-    color: #D4AF37;
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
     font-weight: bold;
-}
-#que{
+    color: #b98E77; 
+  }
+  
+  input, textarea {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #b98E77;
+    background-color: transparent;
     position: relative;
     left: 100px;
+    font-style: italic;
+    font-weight: 600;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #b98E77; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  button[type="submit"] {
+    background-color: #b98E77; 
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    left: 40px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #fff;
+    color: #b98E77;
+  }
+
+
+  @media (max-width: 600px) {
+    .row {
+      flex-direction: column;
+    }
+    .col-md-4, .col-md-8 {
+      width: 100%;
+    }
+    .container{
+        width: 80%;
+        font-size: 14px;
+         
+  padding: 20px 30px; 
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+    }
+    .contact{
+        position: relative;
+        left: 10px;
+    } 
+    ul{
+        position: relative;
+        left: 5px;
+    }
+    label{
+        position: relative;
+        left: 20px;
+    }
+    .col-md-8{
+        position: relative;
+        right: 30px;
+    }
+    .col-md-4{
+        position: relative;
+        right: 20px;
+    }
+    #get{
+        position: relative;
+        left: 30px;
+    }
+    .form-control{
+        position: relative;
+        left: 60px;
+        margin-top: 20px;
+    }
+    .btn0{
+        position: relative;
+        right: 30px;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 767px) {
+  .row {
+    flex-direction: row;
+  }
+  .col-md-4, .col-md-8 {
+    width: 80%;
+  }
+  .container {
+    width: 80%;
+    padding: 20px 30px;
+  }
+
+  .col-md-4{
+    position: relative;
+    left: 90px;
+  }
+
+  .contact {
+    font-size: 28px;
+    margin-bottom: 15px;
+    position: relative;
+    right: 100px;
+  }
+  ul {
+    padding: 15px;
+  }
+  li {
+    margin-bottom: 25px;
+  }
+  label {
+    font-size: 14px;
+  }
+  input, textarea {
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    left: 70px;
+  }
+  button[type="submit"] {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
 }
+  
+
+  /* @media (max-width: 400px) {
+  .row {
+    flex-direction: column;
+  }
+  .col-md-4, .col-md-8 {
+    width: 90%;
+  }
+  .container {
+    width: 90%;
+    padding: 15px 20px;
+  }
+  .contact {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  ul {
+    padding: 10px;
+  }
+  li {
+    margin-bottom: 30px;
+  }
+  label {
+    font-size: 16px;
+  }
+  input, textarea {
+    font-size: 14px;
+  }
+  button[type="submit"] {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+} */
   </style>

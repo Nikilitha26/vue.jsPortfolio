@@ -47,11 +47,11 @@
 <script>
 
 export default {
-  data() {
-    return {
-      imageUrl: 'https://raw.githubusercontent.com/Nikilitha26/vue.jsImages/8c8d5d155d446f2286d63e4a51a8516d143de490/896712.jpg' 
-    }
-  }
+  // data() {
+  //   return {
+  //     imageUrl: 'https://raw.githubusercontent.com/Nikilitha26/vue.jsImages/8c8d5d155d446f2286d63e4a51a8516d143de490/896712.jpg' 
+  //   }
+  // }
 }
 </script>
 
@@ -59,6 +59,7 @@ export default {
 .home {
   height: 100vh;
   margin: 0;
+  background-color: white;
 }
 
 .image-background {
@@ -71,22 +72,22 @@ export default {
 }
 
 .content {
-  color: #D4AF37;
+  color: #BDA18C;
   text-align: center;
 }
 
-.footer {
+/* .footer {
   background-color: #D4AF37;
   color: #fff;
   padding: 1rem;
   text-align: center;
   clear: both;
-}
+} */
 #profile-photo {
     width: 250px;
     height: 250px;
     margin-top: 100px;
-    border: 5px solid #D4AF37;
+    border: 5px solid #BDA18C;
     border-radius: 50%;
 }
 #custom-image {
@@ -94,7 +95,7 @@ export default {
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #D4AF37;
+  border: 5px solid #C08552;
 }
 
 #custom-image2 {
@@ -102,7 +103,7 @@ export default {
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #D4AF37;
+  border: 5px solid #BDA18C;
 }
 #btn {
   text-align: center;
@@ -112,7 +113,7 @@ export default {
 }
 
 #btn {
-  background-color: #D4AF37;
+  background-color: #A7795E;
   color: #fff;
   border: none;
   padding: 10px 10px;
@@ -123,7 +124,7 @@ export default {
 
 #btn:hover {
   background-color: #fff;
-  color: #D4AF37;
+  color: #A7795E;
 }
 #niki{
     width: 108px; 
@@ -134,14 +135,14 @@ export default {
     font-weight: bolder;
 }
 #profile-title-left {
-    color: #D4AF37;
+    color: #BDA18C;
     font-size: 20px;
     font-weight: 600;
 }
 #profile-title-right {
     position: relative;
     left: -57px;
-    color: #D4AF37;
+    color: #BDA18C;
     font-size: 20px;
     font-weight: 600;
 }
@@ -225,7 +226,7 @@ export default {
   width: 15px;
   height: 15px;
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  background-color: #D4AF37; 
+  background-color: #BDA18C; 
   animation: sparkle 2s infinite;
 }
 
@@ -237,7 +238,7 @@ export default {
   width: 100%;
   height: 100%;
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  background-color: #D4AF37;
+  background-color: #BDA18C;
   animation: sparkle-before 2s infinite;
 }
 

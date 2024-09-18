@@ -1,35 +1,34 @@
 <template>
- <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container">
-      <a class="navbar-brand" href="../views/HomeView.vue">
-        <img id="logo" src="https://raw.githubusercontent.com/Nikilitha26/vue.jsImages/a7f6f8a62b52952ca6852dd596822bb78b5cb629/Portfolio__2_-removebg-preview.png" alt="Logo" width="190" height="190">
+  <nav class="navbar navbar-expand-lg fixed-top ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="https://nikilitha26.github.io/vue.jsImages/NIKILITHA_KAKAZA-removebg-preview.png" alt="Logo" width="140" height="140">
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item" :class="{ active: $route.path === '/home' }">
-            <RouterLink class="nav-link" to="/home">Home</RouterLink>
-          </li>
-          <li class="nav-item" :class="{ active: $route.path === '/about' }">
-            <RouterLink class="nav-link" to="/about">About</RouterLink>
-          </li>
-          <li class="nav-item" :class="{ active: $route.path === '/projects' }">
-            <RouterLink class="nav-link" to="/projects">Projects</RouterLink>
-          </li>
-          <li class="nav-item" :class="{ active: $route.path === '/resume' }">
-            <RouterLink class="nav-link" to="/resume">Resume</RouterLink>
-          </li>
-          <li class="nav-item" :class="{ active: $route.path === '/testimonial' }">
-            <RouterLink class="nav-link" to="/testimonial">Testimonials</RouterLink>
-          </li>
-          <li class="nav-item" :class="{ active: $route.path === '/contact' }">
-            <RouterLink class="nav-link" to="/contact">Contact Me</RouterLink>
-          </li>
-        </ul>
+        <div class="right">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<li class="nav-item" :class="{ active: $route.path === '/' }">
+  <router-link class="nav-link" to="/">Home</router-link>
+</li>
+<li class="nav-item" :class="{ active: $route.path === '/about' }">
+  <router-link class="nav-link" to="/about">About Me</router-link>
+</li>
+<li class="nav-item" :class="{ active: $route.path === '/education' }">
+  <router-link class="nav-link" to="/education">Education & Experience</router-link>
+</li>
+<li class="nav-item" :class="{ active: $route.path === '/projects' }">
+  <router-link class="nav-link" to="/projects">Projects</router-link>
+</li>
+<li class="nav-item" :class="{ active: $route.path === '/contact' }">
+  <router-link class="nav-link" to="/contact">Contact</router-link>
+</li>
+</ul>
       </div>
     </div>
+  </div>
   </nav>
 </template>
 
@@ -43,125 +42,131 @@ export default {
 }
 </script>
 
-<style scoped>
-.navbar {
-  position: absolute;
-  background-color: transparent;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: bolder;
-}
-.container{
-  position: relative;
-  right: 70px;
-}
-.navbar-brand {
-  position: absolute;
-  right: 560px;
-  top: -43px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #D4AF37;
-  text-decoration: none;
-}
-
-.navbar-nav {
-  position: relative;
-  left: 800px;
-  top: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  font-size: large;
-  color: #D4AF37;
-}
-
-.nav-item {
-  margin-right: 10px;
-}
-
-.nav-link {
-  color: #D4AF37;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  margin-left: 10px;
-  margin-right: 20px;
-}
-
-.nav-link:hover {
-  background: #D4AF37;
+<style>
+.nav-link{
   color: white;
+  float: right;
+  margin-right: 30px;
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  position: relative;
+  
+  }
+.nav-item.active {
+/* background-color: white; */
+color: #b98E77 !important;
 }
-
 .nav-item.active .nav-link {
   text-decoration: underline;
-  color: #D4AF37;
+color: white !important;
+background-color: transparent;
+}
+nav {
+position: absolute;
+background-color:#b98E77;
+padding: 1rem; 
+color: white !important;
+height: 100px;
 }
 
-.nav-item.active .nav-link:hover {
-  color: white;
-  background-color: #D4AF37;
+.right{
+  position: relative;
+  left: 650px; 
 }
 
-.nav-item:last-child {
+
+.nav-link:hover {
+text-decoration: underline;
+color: white ;
+}
+
+.offcanvas {
+  margin-right: 0rem;
+}
+
+#profile {
+  position: relative;
+  bottom: 15px
+}
+
+/*  offcanvas */
+#list-unstyled{
+text-align: start;
+color: black;
+}
+.list-unstyled a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+.mb-0{
+position: relative;
+bottom: 20px;
+font-family: "Cormorant", serif;
+font-optical-sizing: auto;
+font-weight: 800;
+font-style: normal;
+font-size: 26px;
+/* left: 100px; */
+}
+
+#profile{
+position: relative;
+right: 10px;
+}
+
+.router-link-active {
+  color: #337ab7;
+}
+
+.router-link-exact-active {
+  color: #23527c;
+}
+
+@media only screen and (max-width: 990px) {
+nav {
+  flex-direction: column; 
+}
+.navbar-nav {
+  flex-direction: column;
+}
+.nav-link {
+  font-size: 0.8rem; 
+  margin-right: 0; 
+  border-radius: 0.25rem; 
+  padding: 0.5rem 0.5rem; 
+}
+.right {
+  position: static;
+  left: 0;
+}
+.offcanvas {
+  margin-right: 0rem;
+}
+}
+
+@media only screen and (max-width: 1250px) {
+nav {
+  flex-direction: column;
+}
+.navbar-nav {
+  flex-direction: column;
+}
+.nav-link {
+  font-size: 0.8rem;
   margin-right: 0;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
 }
-#logo{
-  width:180px;
-  height: 170px;
-  position: relative;
-  bottom: px;
-  right: 20px;
+.right {
+  position: static;
+  left: 0;
 }
-/* Add media queries for responsiveness */
-@media only screen and (max-width: 300px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .container {
-    margin: 0 10px;
-    max-width: 70%;
-  }
-  .navbar-brand {
-    position: relative;
-    right: 0;
-    top: 0;
-    font-size: 1rem;
-    margin: 0 auto; /* add this to center the logo */
-  }
-  .navbar-nav {
-    flex-direction: column;
-    left: 0;
-    top: 0;
-    margin: 0; /* add this to remove the margin */
-  }
-  .nav-item {
-    margin-right: 0;
-  }
-  .nav-link {
-    margin-right: 0;
-  }
+.offcanvas {
+  margin-right: 0rem;
 }
-#logo{
-  width:170px;
-  height: 170px;
-  position: relative;
-  bottom: px;
-  right: 20px;
-}
-/* .navbar-toggler-icon{
-  position: relative;
-  bottom: 100px;
-  left: 20px;
-} */
-.navbar-toggler{
-  position: relative;
-  bottom: 120px;
-  left: 255px;
 }
 </style>

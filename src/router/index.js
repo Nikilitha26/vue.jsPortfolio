@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import ProjectsView from '../views/ProjectsView.vue'
 import ResumeView from '../views/ResumeView.vue'
-import TestimonialsView from '../views/TestimonialsView.vue'
+// import TestimonialsView from '../views/TestimonialsView.vue'
 import ContactView from '../views/ContactView.vue'
 
 const routes = [
@@ -25,16 +25,16 @@ const routes = [
   },
 
   {
-    path: '/resume',
-    name: 'resume',
+    path: '/education',
+    name: 'education',
     component: ResumeView
   },
 
-  {
-    path: '/testimonial',
-    name: 'testimonials',
-    component: TestimonialsView
-  },
+  // {
+  //   path: '/testimonial',
+  //   name: 'testimonials',
+  //   component: TestimonialsView
+  // },
 
   {
     path: '/contact',
