@@ -29,7 +29,10 @@
   padding: 1rem;
   text-align: center;
   clear: both;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: "Cormorant", serif;
+font-optical-sizing: auto;
+font-weight: 800;
+font-style: normal;
 }
 
 .social-icons-container {

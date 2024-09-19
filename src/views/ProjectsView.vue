@@ -56,17 +56,16 @@ export default {
   padding: 10px;
   position: relative;
   left: 100px;
-  bottom: 40px;
+  bottom: 220px;
 }
 .brr{
-  position: relative;
-  top: 150px;
-  left: 20px;
+  margin-top: 40px;
   text-decoration: underline;
   font-family: "Cormorant", serif;
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
+  color: #906046;
 }
 .flip-card-icons {
   position: absolute;
@@ -118,7 +117,7 @@ export default {
 }
 
 .projects {
-  height: 100%;
+  height: 200vh;
   margin: 0;
 }
 
@@ -127,6 +126,8 @@ export default {
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
+  position: relative;
+  top: 10px;
 }
 
 .card-text{
@@ -191,5 +192,104 @@ export default {
   transform: scale(1.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: 0.7s;
+}
+
+/* For small screens (mobile devices) */
+@media only screen and (max-width: 768px) {
+  .row {
+    justify-content: center;
+    top: 30px;
+  }
+  .flip-card {
+    margin: 10px auto;
+  }
+  .brr {
+    text-align: center;
+    left: 0;
+    right: 0;
+    position: relative;
+    top: 40px;
+    margin: auto;
+  }
+.projects{
+  height: auto;
+}
+}
+
+/* For medium screens (tablets) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .flip-card {
+    width: 280px;
+    height: 320px;
+    margin: 15px;
+  }
+  .flip-card-icons {
+    top: 260px;
+  }
+  .row {
+    margin-top: 220px;
+  }
+  #projjects {
+    height: 200px;
+  }
+  .brr{
+  margin-top: 40px;
+  text-decoration: underline;
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  color: #906046;
+}
+.projects{
+  height: auto;
+}
+}
+
+/* For medium screens (tablets) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .flip-card {
+    margin: 20px;
+    width: calc(50% - 40px); 
+    width: 230px;
+    height: 320px;
+    position: relative;
+    left: 30px;
+    margin: 30px;
+  }
+  .brr{
+    position: relative;
+    padding: 0;
+  }
+  .projects{
+  height: 200vh;
+}
+}
+
+
+/* For extra large screens */
+@media only screen and (min-width: 1200px) {
+  .flip-card {
+    width: 320px;
+    height: 360px;
+    margin: 25px;
+  }
+  .flip-card-icons {
+    top: 280px;
+  }
+  .row {
+    margin-top: 300px;
+  }
+  #projjects {
+    height: 240px;
+  }
+  .brr {
+    top: 180px;
+    left: 25px;
+  }
 }
 </style>

@@ -174,7 +174,7 @@ export default {
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
-    margin-top: 160px;
+    margin-top: 80px;
   }
   
   .row {

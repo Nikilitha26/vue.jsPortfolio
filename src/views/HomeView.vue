@@ -4,14 +4,14 @@
     <div class="image-background" :style="{ backgroundImage: `url(${imageUrl})` }">
       <div class="content">
      
-        <div class="sparkle-wrapper">
+        <!-- <div class="sparkle-wrapper">
   <img id="profile-photo" src="https://nikilitha26.github.io/Boot-img/Image/IMG_8063.PNG" alt="Profile Photo" class="img-fluid  border-5 rounded-circle">
   <div class="sparkle" style="top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
   <div class="sparkle" style="top: 25%; left: 75%;"></div>
   <div class="sparkle" style="top: 75%; left: 75%;"></div>
   <div class="sparkle" style="top: 25%; left: 25%;"></div>
   <div class="sparkle" style="top: 75%; left: 25%;"></div>
-</div>
+</div> -->
         <div id="text" class="align-middle"></div>
         <span id="niki" class="align-middle">Hello! I am </span> <br>
         <h3 id="name" class=" fs-1">NIKILITHA KAKAZA</h3> 
@@ -47,11 +47,11 @@
 <script>
 
 export default {
-  // data() {
-  //   return {
-  //     imageUrl: 'https://raw.githubusercontent.com/Nikilitha26/vue.jsImages/8c8d5d155d446f2286d63e4a51a8516d143de490/896712.jpg' 
-  //   }
-  // }
+  data() {
+    return {
+      imageUrl: 'https://nikilitha26.github.io/vue.jsImages/backg.jpeg' 
+    }
+  }
 }
 </script>
 
@@ -59,7 +59,11 @@ export default {
 .home {
   height: 100vh;
   margin: 0;
-  background-color: white;
+  background-color: hite;
+  font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
 }
 
 .image-background {
@@ -95,7 +99,7 @@ export default {
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #C08552;
+  border: 5px solid #BDA18C;
 }
 
 #custom-image2 {
@@ -135,14 +139,16 @@ export default {
     font-weight: bolder;
 }
 #profile-title-left {
-    color: #BDA18C;
+    color: black;
     font-size: 20px;
     font-weight: 600;
+    position: relative;
+    left: 20px;
 }
 #profile-title-right {
     position: relative;
-    left: -57px;
-    color: #BDA18C;
+    left: -50px;
+    color: black;
     font-size: 20px;
     font-weight: 600;
 }

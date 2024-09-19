@@ -6,6 +6,7 @@ export default createStore({
     education: null,
     skills: null,
     testimonials: null,
+    experience: null,
   },
   getters: {
   },
@@ -21,6 +22,9 @@ export default createStore({
     },
     setTestimonials(state, payload) {
       state.testimonials = payload
+    },
+    setExperience(state, payload) {
+      state.experience = payload
     }
   },
   actions: {
@@ -28,11 +32,12 @@ export default createStore({
       try {
         let fetchedData = await fetch('https://nikilitha26.github.io/vue.js-API/API/data.json')
         let data = await fetchedData.json()
-        let { projects, education, skills, testimonials } = data
+        let { projects, education, skills, testimonials, experience } = data
         commit('setProjects', projects)
         commit('setEducation', education)
         commit('setSkills', skills)
         commit('setTestimonials', testimonials)
+        commit('setExperience', experience)
       } catch (error) {
         console.error('Error fetching data:', error)
       }
