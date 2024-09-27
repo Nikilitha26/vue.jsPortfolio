@@ -278,8 +278,8 @@ export default {
   }
 }
 
-  /* For screens smaller than 300px */
-  @media (max-width: 300px) {
+  
+  @media (max-width: 600px) {
    .image-background {
       height: 120vh;
       width: 300px;

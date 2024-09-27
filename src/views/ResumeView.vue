@@ -236,5 +236,35 @@ export default {
   color: #b98E77;
 }
 
-
+@media (max-width: 600px) {
+  .resume {
+    height: auto;
+    margin: 20px;
+  }
+  .education-cards, .experience-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .education-card, .experience-card {
+    margin: 20px;
+    width: 100%;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  #btn {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+  }
+}
   </style>

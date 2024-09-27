@@ -1,13 +1,13 @@
 <template >
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <div class="about">
-    <div class="image-background" :style="{ backgroundImage: `url(${imageUrl})` }">
+    <div class="image-background">
 
       <h2 id="about" class="animate__animated animate__slideInLeft">ABOUT</h2 >
         <div id="backgroundd" class="container rounded p-4 bg-opacity-25" >
             <div class="row d-flex align-items-right">
               <div class="col-md-6">
-                <img src="https://nikilitha26.github.io/Boot-img/Image/IMG_8063.PNG" alt="Image" class="img-fluid-sqare" style="width: 300px; height: 300px; margin-left: 100px;">
+                <img id="img" src="https://nikilitha26.github.io/Boot-img/Image/IMG_8063.PNG" alt="Image" class="img-fluid-sqare" style="width: 300px; height: 300px; margin-left: 100px;">
               </div>
               <div class="col-md-6 text-white" >
                 <p id="description" style="margin-right: 50px; font-style: italic;">
@@ -138,7 +138,7 @@ import { Pagination, Navigation } from 'swiper/modules';
   width: 700px;
   top: 270px;
   color: #906046;
-  font-weight: bolder
+  font-weight: bolder;
 }
   #skills{
     position: relative;
@@ -234,7 +234,7 @@ import { Pagination, Navigation } from 'swiper/modules';
     bottom: 230px;
     background-color: #b98E77; 
     color: white;
-    height: 400px; 
+    height: auto; 
     margin-top: 30px;
     left: 170px;
     box-shadow: 8px 8px 8px #906046;
@@ -260,6 +260,7 @@ import { Pagination, Navigation } from 'swiper/modules';
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
+    position: relative;
 }
 
 .img-fluid-sqare{
@@ -267,264 +268,77 @@ import { Pagination, Navigation } from 'swiper/modules';
   top: 25px;
   right: 50px;
 }
-/* Media queries for 300px screen */
-/* @media only screen and (max-width: 300px) {
-  .about {
-    height: 100vh;
-    margin: 0;
-    padding: 20px;
-  }
-  .image-background {
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #about {
-    font-size: 24px;
-    left: 0;
-    bottom: 100px;
-  }
-  #backgroundd {
-    height: 250px;
-    margin-top: 20px;
-    right: 0;
-  }
-  #description {
-    margin-right: 20px;
-    font-size: 16px;
-  }
-  .img-fluid-sqare {
-    width: 10px;
-    height: 10px;
-    margin-left: 50px;
-  }
-} */
+.swiper-wrapper {
+  padding: 0; 
+  margin: 0; 
+}
 
- /* Large screens (1200px and below) */
-@media only screen and (max-width: 1200px) {
-  .about {
-    height: 150vh;
-  }
-  .swiper-slide {
-    width: 120px;
-  }
-  .swiper {
-    width: -600px;
-    height: 200px;
-    margin: 50px -120px;
-  }
-  .mySwiper{
-    right: 600px;
-    width: 500px;
-    top: 200px;
-  }
-  #skills{
-    top: 100px;
-    right: 200px;
+@media only screen and (max-width: 600px) {
+  .image-background {
+  height: auto;
+  display: flex;
+  width: auto !important;
+  margin: 0 !important;
+
+}
+  #about, #skills {
     font-size: 25px;
   }
-  .skills-container {
-    top: 40px;
-    left: 180px;
-  }
-  .skills-card {
-    width: 100px;
-  }
-  #btn {
-    top: 30px;
-    right: 350px;
-    width: 100px;
-  }
-  #about {
-    bottom: 300px;
-    left: 500px;
-  }
-  #backgroundd {
-    height: 300px; 
-    margin-top: 20px;
-    left: 120px;
-  }
-  #description {
-    margin-right: 20px;
-    font-size: 14px;
-  }
-  .img-fluid-sqare {
-    width: 80px;
-    height: 80px;
-    margin-left: 30px;
-  }
-}
-
-/* Medium screens (900px and below) */
-@media only screen and (max-width: 900px) {
-  .about {
-    height: 120vh;
-  }
-  .swiper-slide {
-    width: 100px;
-  }
-  .swiper {
-    width: -400px;
-    height: 150px;
-    margin: 30px -100px;
-  }
-  .mySwiper{
-    right: 400px;
-    width: 400px;
-    top: 150px;
-  }
   #skills{
-    top: 80px;
-    right: 150px;
-    font-size: 20px;
+    position: relative;
+    left: 270px;
   }
-  .skills-container {
-    top: 30px;
-    left: 120px;
+
+  #img {
+    width: 170px !important;
+    height: 170px !important;
+    position: relative;
+    right: 50px !important;
   }
+.skills-container{
+  position: relative;
+  margin-left: 500px !important;
+}
   .skills-card {
-    width: 80px;
+    width: 100px;
+    margin: 20px 20px;
+    padding: 10px;
+  }
+
+  .skills-card img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+
+  .swiper-slide {
+  margin: 0;
+  padding: 0;
+}
+  .mySwiper {
+    width: 600px;
+    top: 150px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  .mySwiper .swiper-wrapper {
+    width: auto !important; 
+    margin: 0; 
+    padding: 0;
+  }
+  .swiper-wrapper {
+  padding: 0; 
+  margin: 0; 
+}
+  #description {
+    font-size: 14px;
+    margin-right: 20px;
   }
   #btn {
-    top: 20px;
-    right: 250px;
     width: 80px;
-  }
-  #about {
-    bottom: 250px;
-    left: 400px;
-  }
-  #backgroundd {
-    height: 250px; 
-    margin-top: 15px;
-    left: 90px;
-  }
-  #description {
-    margin-right: 15px;
     font-size: 12px;
   }
-  .img-fluid-sqare {
-    width: 60px;
-    height: 60px;
-    margin-left: 20px;
-  }
 }
 
-/* Small screens (600px and below) */
-@media only screen and (max-width: 600px) {
-  .about {
-    height: 100vh;
-  }
-  .swiper-slide {
-    width: 80px;
-  }
-  .swiper {
-    width: -200px;
-    height: 100px;
-    margin: 20px -80px;
-  }
-  .mySwiper{
-    right: 200px;
-    width: 300px;
-    top: 100px;
-  }
-  #skills{
-    top: 60px;
-    right: 100px;
-    font-size: 15px;
-  }
-  .skills-container {
-    top: 20px;
-    left: 80px;
-  }
-  .skills-card {
-    width: 60px;
-  }
-  #btn {
-    top: 15px;
-    right: 150px;
-    width: 60px;
-  }
-  #about {
-    bottom: 200px;
-    left: 300px;
-  }
-  #backgroundd {
-    height: 200px; 
-    margin-top: 10px;
-    left: 60px;
-  }
-  #description {
-    margin-right: 10px;
-    font-size: 10px;
-  }
-  .img-fluid-sqare {
-    width: 40px;
-    height: 40px;
-    margin-left: 15px;
-  }
-}
-
-/* Extra small screens (300px and below) */
-@media only screen and (max-width: 300px) {
-  /* .about {
-    height: 80vh;
-  } */
-  .swiper-slide {
-    width: 60px;
-  }
-  .swiper {
-    width: -100px;
-    height: 80px;
-    margin: 15px -60px;
-  }
-  .mySwiper{
-    right: 100px;
-    width: 200px;
-    top: 80px;
-  }
-  #skills{
-    top: 70px;
-    right: 60px;
-    font-size: 18px;
-  }
-  .skills-container {
-    top: 15px;
-    left: 40px;
-  }
-  .skills-card {
-    width: 40px;
-  }
-  #btn {
-    top: 10px;
-    right: 100px;
-    width: 40px;
-  }
-  #about {
-    bottom: 150px;
-    left: 200px;
-  }
-  #backgroundd {
-    height: 550px; 
-    margin-top: 10px;
-    left: 0px;
-  }
-  #description {
-    margin-right: 5px;
-    font-size: 10px;
-    position: relative;
-    top: 50px;
-  }
-  .img-fluid-sqare {
-    width: 100px !important;
-    height: 100px !important;
-    margin-left: 10px;
-    position: relative;
-    bottom: 20px;
-
-  }
-}
 </style>
