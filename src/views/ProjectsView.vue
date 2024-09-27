@@ -117,8 +117,9 @@ export default {
 }
 
 .projects {
-  height: 200vh;
+  height: auto;
   margin: 0;
+  margin-top: 160px;
 }
 
 .card-title{

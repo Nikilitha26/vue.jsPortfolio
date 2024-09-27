@@ -65,6 +65,7 @@ export default {
     height: 150vh;
     margin: 0;
     overflow-x: hidden;
+    margin-top: 110px;
   }
   
   .image-background {

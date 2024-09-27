@@ -79,10 +79,14 @@ import { Pagination, Navigation } from 'swiper/modules';
 </script>
 <style scoped>
 @import '~animate.css/animate.min.css';
+body {
+  padding-top: 50px; /* adjust the value to match the navbar's height */
+}
 
 .about {
   height: 160vh;
   margin: 0;
+  margin-top: 100px;
 }
 .swiper-slide {
   text-align: center;

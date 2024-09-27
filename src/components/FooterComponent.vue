@@ -24,6 +24,7 @@
 
 <style scoped>
 .footer {
+  /* position: fixed; */
   background-color: #b98E77;
   color: #fff;
   padding: 1rem;
@@ -33,6 +34,7 @@
 font-optical-sizing: auto;
 font-weight: 800;
 font-style: normal;
+margin-bottom: 0;
 }
 
 .social-icons-container {

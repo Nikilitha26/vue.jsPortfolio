@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg ">
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
         <img src="https://nikilitha26.github.io/vue.jsImages/NIKILITHA_KAKAZA-removebg-preview.png" alt="Logo" width="100" height="100">
@@ -47,6 +47,7 @@ nav {
 position: absolute;
 background-color:#b98E77;
 padding: 1rem; 
+
 }
 
 .right{
