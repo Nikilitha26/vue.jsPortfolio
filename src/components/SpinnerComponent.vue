@@ -3,7 +3,7 @@
       <!-- Your content here -->
       <router-view />
       <div class="loader-container" v-if="loading">
-        <img src="https://github.com/Nikilitha26/vue.jsImages/blob/main/Portfolio__2_-removebg-preview.png?raw=true" alt="Logo" class="logo" />
+        <img src="https://nikilitha26.github.io/vue.jsImages/NIKILITHA_KAKAZA1-removebg-preview.png" alt="Logo" class="logo" />
         <div class="spinner">
           <div class="bounce1"></div>
           <div class="bounce2"></div>
@@ -64,7 +64,7 @@ export default {
   .bounce1,.bounce2,.bounce3 {
     width: 20px;
     height: 20px;
-    background-color: #D4AF37;
+    background-color: #906046 ;
     border-radius: 100%;
     display: inline-block;
     animation: bouncedelay 1.4s infinite ease-in-out both;
