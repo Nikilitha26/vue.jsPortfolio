@@ -49,7 +49,7 @@
 export default {
   data() {
     return {
-      imageUrl: 'https://nikilitha26.github.io/vue.jsImages/backg.jpeg' 
+      imageUrl: 'https://nikilitha26.github.io/vue.jsImages/3890c7f5219ed01e7c531bc989f37b5f.jpg' 
     }
   }
 }
@@ -57,17 +57,18 @@ export default {
 
 <style scoped>
 .home {
-  height: 100vh;
+  height: 70vh;
   margin: 0;
   background-color: hite;
   font-family: "Cormorant", serif;
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
+    
 }
 
 .image-background {
-  height: 100%;
+  height: 70vh;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -100,7 +101,7 @@ export default {
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #BDA18C;
+  border: 5px solid #A7795E;
 }
 
 #custom-image2 {
@@ -108,7 +109,7 @@ export default {
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #BDA18C;
+  border: 5px solid #A7795E;
 }
 #btn {
   text-align: center;
@@ -182,6 +183,25 @@ export default {
 .slide-from-right {
   animation: slide-from-right 1s forwards;
 }
+#custom-image2{
+    position: relative;
+    bottom: -4px;
+    left: 30px;
+  }
+  #custom-image{
+    position: relative;
+    right: 30px;
+  }
+  #row {
+    flex-direction: row;
+    align-items: center;
+  }
+  #icon, #icon2 {
+    margin: 1px 0;
+  }
+  #btn {
+    margin-top: 20px;
+  }
 
 @keyframes slide-from-left {
   0% {
@@ -279,15 +299,34 @@ export default {
   }
 }
 
-  
-  @media (max-width: 600px) {
+/* @media  (max-width: 320px) {
+   .home {
+      height: auto !important;
+      width: 600px;
+      
+    }
    .image-background {
-      height: 120vh;
-      width: 300px;
+      height: 150vh !important ;
+      width: 600px;
+   }
+  } */
+  
+  @media  (max-width: 600px) {
+   .home {
+      /* height: auto !important; */
+      width: 600px;
+      min-height: 100vh; 
+      
     }
-   .content {
+   .image-background {
+      min-height: 100vh !important ;
+      /* width: 600px; */
+   }
+   /* .content {
       padding: 8px;
-    }
+      position: relative;
+      top: 50px;
+    } */
     #profile-photo {
       width: 100px;
       height: 100px;
@@ -302,37 +341,55 @@ export default {
       position: relative;
       left: 80px;
     }
+    
    
-    #custom-image, #custom-image2 {
-      width: 25px;
-      height: 25px;
+    #custom-image {
+      width: 40px;
+      height: 40px;
       margin: 0 10px;
+      position: relative;
+      right: 80px;
+      top: 20px;
     }
     #btn {
-      font-size: 10px;
-      padding: 2px 2px;
+      font-size: 14px;
+      padding: 5px;
+      margin-top: 8px;
+      margin-left: 30px;
+      /* position: relative;
+      top: 20px; */
+      
     }
-  }
-  #custom-image2{
+    #custom-image2{
+      width: 40px;
+      height: 40px;
+      margin: 0 10px;
+      position: relative;
+      bottom: 20px;
+      left: 110px;
+    }
+    #niki{
+      font-size: 38px;
+    }
+    #name{
+      font-size: 16px;
+    }
+    #profile-title-left{
+      font-size: 18px;
+    }
+    #profile-title-right{
+      font-size: 18px;
+    }
+    .profile-titles {
+    white-space: nowrap;
     position: relative;
-    bottom: -4px;
-    left: 30px;
+    right: 1  0px;
   }
-  #custom-image{
-    position: relative;
-    right: 30px;
-  }
-  #row {
-    flex-direction: row;
-    align-items: center;
-  }
-  #icon, #icon2 {
-    margin: 1px 0;
-  }
-  #btn {
-    margin-top: 20px;
+  #profile-title-left, #profile-title-right {
+    display: inline-block;
+    margin: 0 68px;
   }
 
-
+  }
 
 </style>

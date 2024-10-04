@@ -25,9 +25,11 @@
 <style scoped>
 .footer {
   /* position: fixed; */
+  /* position: absolute; */
+  flex-shrink: 0;
   background-color: #b98E77;
   color: #fff;
-  padding: 1rem;
+  padding: 0.25rem;
   text-align: center;
   clear: both;
   font-family: "Cormorant", serif;
@@ -37,23 +39,29 @@ font-style: normal;
 margin-bottom: 0;
 }
 
+.footer p {
+  margin-bottom: 0; 
+  line-height: 1; 
+}
 .social-icons-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 0.25rem; 
+  margin-bottom: 0.25rem; 
 }
 
 .custom-image {
-  width: 45px !important;
-  height: 45px !important;
+  width: 35px !important;
+  height: 35px !important;
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid #b98E77;
   margin: 0 10px;
 }
 .custom-image2 {
-  width: 45px !important;
-  height: 45px !important;
+  width: 35px !important;
+  height: 35px !important;
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid #b98E77;
@@ -66,10 +74,11 @@ margin-bottom: 0;
   align-items: center;
 }
 
-/* Small screens (max-width: 576px) */
-@media only screen and (max-width: 576px) {
+/* Small screens */
+@media only screen and (max-width: 600px) {
   .footer {
     padding: 0.5rem;
+    width: 600px;
   }
   .custom-image {
     width: 40px !important;
@@ -87,16 +96,19 @@ margin-bottom: 0;
 @media only screen and (max-width: 768px) {
   .footer {
     padding: 0.75rem;
+    height: 70px;
   }
   .custom-image {
-    width: 40px;
-    height: 40px;
+    width: 30px  !important;
+    height: 30px !important;
     margin: 0 10px;
+    border: none !important;
   }
   .custom-image2 {
-    width: 40px;
-    height: 40px;
+    width: 30px !important;
+    height: 30px !important;
     margin: 0 10px;
+    border: none !important;
   }
 }
 
@@ -121,6 +133,7 @@ margin-bottom: 0;
 @media only screen and (min-width: 1200px) {
   .footer {
     padding: 1.25rem;
+    
   }
   .custom-image {
     width: 60px;

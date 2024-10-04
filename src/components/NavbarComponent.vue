@@ -47,6 +47,8 @@ nav {
 position: absolute;
 background-color:#b98E77;
 padding: 1rem; 
+margin-bottom: 0;
+padding-bottom: 0;
 
 }
 

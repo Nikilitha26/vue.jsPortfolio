@@ -1,7 +1,7 @@
 <template>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <div class="projects">
-      <h2 class="brr animate__animated animate__slideInLeft">PROJECTS 👩🏻‍💻</h2>
+      <h2 id="brr" class="brr animate__animated animate__slideInLeft">PROJECTS 👩🏻‍💻</h2>
 
       <div class="container">
           <div class="row">
@@ -59,13 +59,21 @@ export default {
   bottom: 220px;
 }
 .brr{
-  margin-top: 40px;
+  margin-top: 150px;
   text-decoration: underline;
   font-family: "Cormorant", serif;
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
   color: #906046;
+}
+#brr{
+  position: relative;
+  top: 30px;
+}
+.container {
+  margin-top: 0;
+  padding-top: 0;
 }
 .flip-card-icons {
   position: absolute;
@@ -118,8 +126,14 @@ export default {
 
 .projects {
   height: auto;
-  margin: 0;
-  margin-top: 160px;
+  /* margin: 0; */
+  margin-top: -25px;
+  /* margin-top: 0;
+  padding-top: 0; */
+  background-image: url('https://i.pinimg.com/564x/db/71/eb/db71eb556f9ca6b9510391ed1ba528d4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .card-title{
@@ -172,8 +186,10 @@ export default {
 }
 
 #icongit{
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 20px;
 }
 
 #iconvercel{
@@ -181,12 +197,13 @@ export default {
   left: 20px;
   width: 60px;
   height: 40px;
+  top: 20px;
 }
 
 #projjects{
   height: 200px;
   transition: transform 0.5s;
-  transition: transform 0.7s ease-out
+  transition: transform 0.7s ease-out;
 }
 
 #projjects.flip:hover {

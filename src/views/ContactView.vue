@@ -113,6 +113,16 @@ export default {
 </script>
   
   <style scoped>
+  body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  background-image: url('https://i.pinimg.com/564x/af/ed/57/afed57c024c97924cee749bd8c01261a.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  bottom: 50px;
+}
   .center-icons {
   display: flex;
   justify-content: center;
@@ -175,6 +185,7 @@ export default {
     font-weight: 800;
     font-style: normal;
     margin-top: 190px;
+    
   }
   
   .row {

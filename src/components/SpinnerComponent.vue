@@ -37,9 +37,10 @@ export default {
   </script>
   
   <style scoped>
+    
   .loader-container {
     position: fixed;
-    top: 0;
+    bottom: 150px;
     left: 0;
     width: 100%;
     height: 100vh;

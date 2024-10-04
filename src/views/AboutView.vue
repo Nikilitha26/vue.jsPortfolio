@@ -7,7 +7,7 @@
         <div id="backgroundd" class="container rounded p-4 bg-opacity-25" >
             <div class="row d-flex align-items-right">
               <div class="col-md-6">
-                <img id="img" src="https://nikilitha26.github.io/Boot-img/Image/IMG_8063.PNG" alt="Image" class="img-fluid-sqare" style="width: 300px; height: 300px; margin-left: 100px;">
+                <img id="img" src="https://nikilitha26.github.io/vue.jsImages/WhatsApp%20Image%202024-10-04%20at%2013.25.10_47246c9b.jpg" alt="Image" class="img-fluid-sqare" style="width: 250px; height: 300px; margin-left: 100px;">
               </div>
               <div class="col-md-6 text-white" >
                 <p id="description" style="margin-right: 50px; font-style: italic;">
@@ -80,7 +80,17 @@ import { Pagination, Navigation } from 'swiper/modules';
 <style scoped>
 @import '~animate.css/animate.min.css';
 body {
-  padding-top: 50px; /* adjust the value to match the navbar's height */
+  padding-top: 50px;
+}
+.image-background {
+  height: 100%;
+background-image: url('https://i.pinimg.com/564x/db/71/eb/db71eb556f9ca6b9510391ed1ba528d4.jpg'); 
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .about {
@@ -115,6 +125,9 @@ body {
   color: #906046;
   --swiper-navigation-color:#906046 ;
   --swiper-navigation-width: 700px;
+}
+.swiper-wrapper{
+  margin: 0;
 }
 .append-buttons {
   text-align: center;

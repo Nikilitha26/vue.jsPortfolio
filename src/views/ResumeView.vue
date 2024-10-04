@@ -66,12 +66,16 @@ export default {
     margin: 0;
     overflow-x: hidden;
     margin-top: 110px;
+    background-image: url('https://i.pinimg.com/564x/db/71/eb/db71eb556f9ca6b9510391ed1ba528d4.jpg');
+  background-size: cover;
+  background-position: center;
   }
   
   .image-background {
     height: 100%;
     background-size: cover;
     background-position: center;
+    background-image: url('https://i.pinimg.com/564x/b8/5a/c6/b85ac65bbe0ae9b912845bf8a81f9f9c.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
@@ -239,16 +243,41 @@ export default {
 
 @media (max-width: 600px) {
   .resume {
-    height: auto;
+    height: auto !important;
     margin: 20px;
+    margin-top: 170px;
+    margin-bottom: 30px;
   }
   .education-cards, .experience-cards {
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
+    right: 130px;
   }
   .education-card, .experience-card {
+    position: relative;
     margin: 20px;
-    width: 100%;
+    width: 250px;
+    top: 80px;
+  }
+  .education-card{
+    height: 240px;
+  }
+  .experience-card{
+    position: relative;
+    top: 550px;
+    right: 130px;
+  }
+  #education{
+    /* position: relative; */
+    margin-bottom: 220px;
+    left: 380px;
+    font-size: 24px;
+  }
+  #experience{
+    position: relative;
+    left: -40px;
+    top: 700px;
   }
   h2 {
     font-size: 24px;
@@ -266,6 +295,20 @@ export default {
     right: 0;
     width: 100%;
     padding: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .education-card {
+    flex: 1 1 100%;
+    /* background-color: lightcoral;  */
+  }
+}
+
+@media (min-width: 1081px) {
+  .education-card {
+    flex: 1 1 calc(100% / 4 - 16px);
+    /* background-color: lightyellow; */
   }
 }
   </style>
