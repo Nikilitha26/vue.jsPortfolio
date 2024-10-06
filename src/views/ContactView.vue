@@ -60,7 +60,7 @@
     <div class="popup-message" v-if="submitted">
     <div class="popup-content">
       <h2>Message submitted successfully!</h2>
-      <p>Thank you for reaching out to out. I will get back to you soon.</p>
+      <p>Thank you for reaching out to me. I will get back to you soon.</p>
       <button @click="closePopup">Close</button>
     </div>
   </div>
