@@ -1,55 +1,76 @@
 <template>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  />
   <div class="projects">
-      <h2 id="brr" class="brr animate__animated animate__slideInLeft">PROJECTS 👩🏻‍💻</h2>
+    <h2 id="brr" class="brr animate__animated animate__slideInLeft">PROJECTS 👩🏻‍💻</h2>
 
-      <div class="container">
-          <div class="row">
-              <div v-for="project in $store.state.projects" :key="project.id" class="col-md-4">
-                  <div class="flip-card">
-                      <div class="flip-card-icons">
-                          <a :href="project.github" target="_blank"><img id="icongit" class="animate__animated animate__pulse animate__repeat animate__infinite" src="https://raw.githubusercontent.com/Nikilitha26/vue.jsImages/1a7775df88538582dec5b01d37c3f33e483b4f49/25231.png"></a>
-                          <a :href="project.vercel" target="_blank"><img id="iconvercel" class="animate__animated animate__pulse animate__repeat animate__infinite"  src="https://raw.githubusercontent.com/Nikilitha26/vue.jsImages/1a7775df88538582dec5b01d37c3f33e483b4f49/vercel-logo-removebg-preview.png" alt=""></a>
-                      </div>
-                      <div class="flip-card-inner">
-                          <div class="flip-card-front">
-                              <img id="projjects" :src="project.image" alt="Project Image" class="img-fluid flip"><br>
-                              <h5 class="card-title">{{ project.name }}</h5>
-                          </div>
-                          <div class="flip-card-back">
-                              <p id="card-text" class="card-text" style="text-align: center;">{{ project.description }}</p>
-                          </div>
-                      </div>
-                  </div>
+    <div class="container">
+      <div class="row">
+        <div v-for="project in $store.state.projects" :key="project.id" class="col-md-4">
+          <div class="flip-card">
+            <div class="flip-card-icons">
+              <a :href="project.github" target="_blank"
+                ><img
+                  id="icongit"
+                  class="animate__animated animate__pulse animate__repeat animate__infinite"
+                  src="https://raw.githubusercontent.com/Nikilitha26/vue.jsImages/1a7775df88538582dec5b01d37c3f33e483b4f49/25231.png"
+              /></a>
+              <a :href="project.vercel" target="_blank"
+                ><img
+                  id="iconvercel"
+                  class="animate__animated animate__pulse animate__repeat animate__infinite"
+                  src="https://raw.githubusercontent.com/Nikilitha26/vue.jsImages/1a7775df88538582dec5b01d37c3f33e483b4f49/vercel-logo-removebg-preview.png"
+                  alt=""
+              /></a>
+            </div>
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img
+                  id="projjects"
+                  :src="project.image"
+                  alt="Project Image"
+                  class="img-fluid flip"
+                /><br />
+                <h5 class="card-title">{{ project.name }}</h5>
               </div>
+              <div class="flip-card-back">
+                <p id="card-text" class="card-text" style="text-align: center">
+                  {{ project.description }}
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
       </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-    methods: {
-        getProjects() {
-            return this.$store.state.projects; 
-        },
-        getData() {
-            return this.$store.dispatch("getData");
-        },
+  methods: {
+    getProjects() {
+      return this.$store.state.projects;
     },
-    mounted() {
-        this.getData(); 
+    getData() {
+      return this.$store.dispatch("getData");
     },
-}
+  },
+  mounted() {
+    this.getData();
+  },
+};
 </script>
 
 <style scoped>
-@import '~animate.css/animate.min.css';
+@import "~animate.css/animate.min.css";
 
 .flip-card {
   width: 300px;
   height: 340px;
-  border: 2px solid #b98E77;
+  border: 2px solid #b98e77;
   border-radius: 10px;
   perspective: 1000px;
   margin: 20px;
@@ -58,7 +79,7 @@ export default {
   left: 100px;
   bottom: 220px;
 }
-.brr{
+.brr {
   margin-top: 150px;
   text-decoration: underline;
   font-family: "Cormorant", serif;
@@ -67,7 +88,7 @@ export default {
   font-style: normal;
   color: #906046;
 }
-#brr{
+#brr {
   position: relative;
   top: 30px;
 }
@@ -99,11 +120,12 @@ export default {
   border-radius: 10px;
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; 
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 10px;
 }
@@ -126,17 +148,18 @@ export default {
 
 .projects {
   height: auto;
+  width: 100%;
   /* margin: 0; */
   margin-top: -25px;
   /* margin-top: 0;
   padding-top: 0; */
-  background-image: url('https://i.pinimg.com/564x/db/71/eb/db71eb556f9ca6b9510391ed1ba528d4.jpg');
+  background-image: url("https://i.pinimg.com/564x/db/71/eb/db71eb556f9ca6b9510391ed1ba528d4.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.card-title{
+.card-title {
   font-family: "Cormorant", serif;
   font-optical-sizing: auto;
   font-weight: 900;
@@ -145,7 +168,7 @@ export default {
   top: 10px;
 }
 
-.card-text{
+.card-text {
   position: relative;
   bottom: 40px;
   font-family: "Cormorant", serif;
@@ -163,7 +186,7 @@ export default {
   align-items: center;
 }
 
-.row{
+.row {
   margin-top: 270px;
   position: relative;
   right: 90px;
@@ -179,20 +202,20 @@ export default {
   bottom: 590px;
   left: 640px;
   font-size: 40px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   text-align: center;
   color: black;
   text-decoration: underline;
 }
 
-#icongit{
+#icongit {
   width: 30px;
   height: 30px;
   position: relative;
   top: 20px;
 }
 
-#iconvercel{
+#iconvercel {
   position: relative;
   left: 20px;
   width: 60px;
@@ -200,7 +223,7 @@ export default {
   top: 20px;
 }
 
-#projjects{
+#projjects {
   height: 200px;
   transition: transform 0.5s;
   transition: transform 0.7s ease-out;
@@ -229,9 +252,9 @@ export default {
     top: 40px;
     margin: auto;
   }
-.projects{
-  height: auto;
-}
+  .projects {
+    height: auto;
+  }
 }
 
 /* For medium screens (tablets) */
@@ -250,18 +273,18 @@ export default {
   #projjects {
     height: 200px;
   }
-  .brr{
-  margin-top: 40px;
-  text-decoration: underline;
-  font-family: "Cormorant", serif;
-  font-optical-sizing: auto;
-  font-weight: 900;
-  font-style: normal;
-  color: #906046;
-}
-.projects{
-  height: auto;
-}
+  .brr {
+    margin-top: 40px;
+    text-decoration: underline;
+    font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    color: #906046;
+  }
+  .projects {
+    height: auto;
+  }
 }
 
 /* For medium screens (tablets) */
@@ -272,22 +295,21 @@ export default {
   }
   .flip-card {
     margin: 20px;
-    width: calc(50% - 40px); 
+    width: calc(50% - 40px);
     width: 230px;
     height: 320px;
     position: relative;
     left: 30px;
     margin: 30px;
   }
-  .brr{
+  .brr {
     position: relative;
     padding: 0;
   }
-  .projects{
-  height: 200vh;
+  .projects {
+    height: 200vh;
+  }
 }
-}
-
 
 /* For extra large screens */
 @media only screen and (min-width: 1200px) {
