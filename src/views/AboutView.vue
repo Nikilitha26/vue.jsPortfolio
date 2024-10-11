@@ -19,11 +19,11 @@
 
         <h2 id="skills" class="animate__animated animate__slideInLeft">SKILLS</h2>
       <div class="skills-container">
-        <swiper
+        <swiper 
         ref="swiperRef"
         :slidesPerView="3"
         :centeredSlides="true"
-        :spaceBetween="30"
+        :spaceBetween="0"
         :pagination="{
           type: 'fraction',
         }"
@@ -126,8 +126,16 @@ align-items: center;
   --swiper-navigation-color:#906046 ;
   --swiper-navigation-width: 700px;
 }
-.swiper-wrapper{
-  margin: 0;
+.swiper-wrapper { 
+  position: relative; 
+  width: calc(200px * 3); 
+  height: 100%; 
+  z-index: 1; 
+  display: flex; 
+  transition-property: transform; 
+  transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial); 
+  box-sizing: border-box; 
+  flex-shrink: 0;
 }
 .append-buttons {
   text-align: center;
