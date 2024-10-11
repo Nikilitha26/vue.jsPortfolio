@@ -237,9 +237,12 @@ export default {
 
 /* For small screens (mobile devices) */
 @media only screen and (max-width: 768px) {
+  /* .projects {
+    width: 100%;
+  } */
   .row {
     justify-content: center;
-    top: 30px;
+    top: 10px;
   }
   .flip-card {
     margin: 10px auto;
@@ -249,11 +252,18 @@ export default {
     left: 0;
     right: 0;
     position: relative;
-    top: 40px;
-    margin: auto;
+    /* top: 180px; */
+    margin-top: 150px;
   }
   .projects {
     height: auto;
+    max-width: 1200px; 
+  margin: 0 auto;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+
   }
 }
 
@@ -268,13 +278,13 @@ export default {
     top: 260px;
   }
   .row {
-    margin-top: 220px;
+    margin-top: 260px;
   }
   #projjects {
     height: 200px;
   }
   .brr {
-    margin-top: 40px;
+    margin-top: 150px;
     text-decoration: underline;
     font-family: "Cormorant", serif;
     font-optical-sizing: auto;

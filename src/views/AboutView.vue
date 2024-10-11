@@ -37,8 +37,7 @@
         </div>
       </div>
 
-      <h2 id="skills" class="animate__animated animate__slideInLeft">SKILLS</h2>
-      <!-- <div class="skills-container"> -->
+      <h2 id="technical-skills" class="animate__animated animate__slideInLeft">TECHNICAL SKILLS</h2>
       <swiper
         ref="swiperRef"
         :slidesPerView="3"
@@ -50,17 +49,58 @@
         :navigation="true"
         :modules="modules"
         class="mySwiper"
-        ><div class="swiper-navigation"></div>
-        <swiper-slide v-for="skill in $store.state.skills" :key="skill.id">
+      >
+        <swiper-slide v-for="skill in $store.state.technicalSkills" :key="skill.id">
           <div class="skills-card">
             <img :src="skill.image" alt="Skill Image" />
             <p id="skil">{{ skill.name }}</p>
           </div>
         </swiper-slide>
       </swiper>
+
+      <h2 id="soft-skills" class="animate__animated animate__slideInLeft">SOFT SKILLS</h2>
+      <swiper
+        ref="swiperRef"
+        :slidesPerView="3"
+        :centeredSlides="true"
+        :spaceBetween="30"
+        :pagination="{
+          type: 'fraction',
+        }"
+        :navigation="true"
+        :modules="modules"
+        class="mySwiper"
+      >
+        <swiper-slide v-for="skill in $store.state.softSkills" :key="skill.id">
+          <div class="skills-card">
+            <img :src="skill.image" alt="Skill Image" />
+            <p id="skil">{{ skill.name }}</p>
+          </div>
+        </swiper-slide>
+      </swiper>
+
+      <h2 id="badges" class="animate__animated animate__slideInLeft">BADGES</h2>
+      <swiper
+        ref="swiperRef"
+        :slidesPerView="3"
+        :centeredSlides="true"
+        :spaceBetween="30"
+        :pagination="{
+          type: 'fraction',
+        }"
+        :navigation="true"
+        :modules="modules"
+        class="mySwiper"
+      >
+        <swiper-slide v-for="badge in $store.state.myBadges" :key="badge.id">
+          <div class="skills-card">
+            <img :src="badge.image" alt="Badge Image" />
+            <p id="skil">{{ badge.name }}</p>
+          </div>
+        </swiper-slide>
+      </swiper>
     </div>
   </div>
-  <!-- </div> -->
 </template>
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -74,9 +114,12 @@ export default {
     getEducation() {
       return this.$store.state.education;
     },
-    getData() {
-      return this.$store.dispatch("getData");
-    },
+    async getData() {
+  console.log("Fetching data...");
+  await this.$store.dispatch("getData");
+  console.log("Data fetched:", JSON.parse(JSON.stringify(this.$store.state)));
+  return this.$store.state;
+},
   },
   mounted() {
     this.getData();
@@ -86,6 +129,7 @@ export default {
     SwiperSlide,
   },
   setup() {
+    console.log("Setting up...");
     return {
       modules: [Pagination, Navigation],
     };
