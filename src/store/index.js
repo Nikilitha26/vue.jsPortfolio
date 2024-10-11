@@ -4,7 +4,9 @@ export default createStore({
   state: {
     projects: null,
     education: null,
-    skills: null,
+    technicalskills: null,
+    softskills: null,
+    mybadges: null,
     testimonials: null,
     experience: null,
   },
@@ -17,8 +19,14 @@ export default createStore({
     setEducation(state, payload) {
       state.education = payload
     },
-    setSkills(state, payload) {
-      state.skills = payload
+    setTechnicalskills(state, payload) {
+      state.technicalskills = payload
+    },
+    setSoftskills(state, payload) {
+      state.softskills = payload
+    },
+    setMybadges(state, payload) {
+      state.mybadges = payload
     },
     setTestimonials(state, payload) {
       state.testimonials = payload
@@ -30,14 +38,19 @@ export default createStore({
   actions: {
     async getData({ commit }) {
       try {
+        console.log("Fetching data...");
         let fetchedData = await fetch('https://nikilitha26.github.io/vue.js-API/API/data.json')
         let data = await fetchedData.json()
-        let { projects, education, skills, testimonials, experience } = data
+        console.log("Data fetched:", data);
+        let { projects, education, technicalskills, softskills, mybadges, testimonials, experience } = data
         commit('setProjects', projects)
         commit('setEducation', education)
-        commit('setSkills', skills)
+        commit('setTechnicalskills', technicalskills)
+        commit('setSoftskills', softskills)
+        commit('setMybadges', mybadges)
         commit('setTestimonials', testimonials)
         commit('setExperience', experience)
+        console.log("Data committed to store");
       } catch (error) {
         console.error('Error fetching data:', error)
       }

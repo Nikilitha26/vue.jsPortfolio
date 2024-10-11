@@ -1,5 +1,8 @@
-<template >
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<template>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  />
   <div class="about">
     <div class="image-background">
 
@@ -19,7 +22,7 @@
 
         <h2 id="skills" class="animate__animated animate__slideInLeft">SKILLS</h2>
       <div class="skills-container">
-        <swiper 
+        <swiper
         ref="swiperRef"
         :slidesPerView="3"
         :centeredSlides="true"
@@ -29,43 +32,84 @@
         }"
         :navigation="true"
         :modules="modules"
-        class="mySwiper"
-      ><div class="swiper-navigation">
-
-      </div>
-        <swiper-slide v-for="skill in $store.state.skills" :key="skill.id">
+        class="mySwiper technical-skills-swiper"
+      >
+        <swiper-slide v-for="skill in $store.state.technicalskills" :key="skill.id">
           <div class="skills-card">
-            <img :src="skill.image" alt="Skill Image">
+            <img :src="skill.image" alt="Skill Image" />
             <p id="skil">{{ skill.name }}</p>
           </div>
+          {{ console.log('Swiper slide rendered') }}
         </swiper-slide>
       </swiper>
-      </div>
-</div>
 
+      <h2 id="soft-skills" class="animate__animated animate__slideInLeft">SOFT SKILLS</h2>
+      <swiper
+        ref="swiperRef"
+        :slidesPerView="3"
+        :centeredSlides="true"
+        :spaceBetween="30"
+        :pagination="{
+          type: 'fraction',
+        }"
+        :navigation="true"
+        :modules="modules"
+        class="mySwiper soft-skills-swiper"
+      >
+        <swiper-slide v-for="skill in $store.state.softskills" :key="skill.id">
+          <div class="skills-card">
+            <img :src="skill.image" alt="Skill Image" />
+            <p id="skil">{{ skill.name }}</p>
+          </div>
+          {{ console.log('Swiper slide rendered') }}
+        </swiper-slide>
+      </swiper>
+
+      <h2 id="badges" class="animate__animated animate__slideInLeft">MY BADGES</h2>
+      <swiper
+        ref="swiperRef"
+        :slidesPerView="3"
+        :centeredSlides="true"
+        :spaceBetween="30"
+        :pagination="{
+          type: 'fraction',
+        }"
+        :navigation="true"
+        :modules="modules"
+        class="mySwiper badges-swiper"
+      >
+        <swiper-slide v-for="badge in $store.state.mybadges" :key="badge.id">
+          <div class="skills-card">
+            <img :src="badge.image" alt="Badge Image" />
+            <p id="skil">{{ badge.name }}</p>
+          </div>
+          {{ console.log('Swiper slide rendered') }}
+        </swiper-slide>
+      </swiper>
     </div>
-
+  </div>
 </template>
 <script>
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper/modules";
 
-  export default {
-    methods: {
-      getEducation() {
-        return this.$store.state.education; 
-      },
-      getData() {
-        return this.$store.dispatch("getData");
-      },
+export default {
+  methods: {
+    getEducation() {
+      return this.$store.state.education;
     },
-    mounted() {
-      this.getData(); 
+    getData() {
+      return this.$store.dispatch("getData");
     },
-    components: {
+  },
+  mounted() {
+  console.log('Swiper components initialized');
+  this.getData();
+},
+  components: {
     Swiper,
     SwiperSlide,
   },
@@ -74,30 +118,32 @@ import { Pagination, Navigation } from 'swiper/modules';
       modules: [Pagination, Navigation],
     };
   },
-}
-
+};
 </script>
 <style scoped>
-@import '~animate.css/animate.min.css';
+@import "~animate.css/animate.min.css";
 body {
   padding-top: 50px;
 }
 .image-background {
   height: 100%;
-background-image: url('https://i.pinimg.com/564x/db/71/eb/db71eb556f9ca6b9510391ed1ba528d4.jpg'); 
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-display: flex;
-justify-content: center;
-align-items: center;
+  width: 100%;
+  background-image: url("https://i.pinimg.com/564x/db/71/eb/db71eb556f9ca6b9510391ed1ba528d4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about {
-  height: 160vh;
+  height: 240vh;
   margin: 0;
   margin-top: 100px;
 }
+
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -106,8 +152,9 @@ align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 0;
 }
-.swiper-navigation{
+.swiper-navigation {
   widows: 200px;
 }
 .swiper-slide img {
@@ -119,23 +166,17 @@ align-items: center;
 }
 
 .swiper {
+  position: relative;
+  left: -620px;
   width: -900px;
   height: 300px;
   margin: 100px -180px;
   color: #906046;
-  --swiper-navigation-color:#906046 ;
+  --swiper-navigation-color: #906046;
   --swiper-navigation-width: 700px;
 }
-.swiper-wrapper { 
-  position: relative; 
-  width: calc(200px * 3); 
-  height: 100%; 
-  z-index: 1; 
-  display: flex; 
-  transition-property: transform; 
-  transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial); 
-  box-sizing: border-box; 
-  flex-shrink: 0;
+.swiper-wrapper{
+  margin: 0;
 }
 .append-buttons {
   text-align: center;
@@ -148,8 +189,8 @@ align-items: center;
 .append-buttons button {
   display: inline-block;
   cursor: pointer;
-  border: 1px solid #b98E77;
-  color: #b98E77;
+  border: 1px solid #b98e77;
+  color: #b98e77;
   text-decoration: none;
   padding: 4px 10px;
   border-radius: 4px;
@@ -157,59 +198,102 @@ align-items: center;
   font-size: 13px;
   font-weight: bolder;
 }
-.mySwiper{
+.mySwiper {
   position: relative;
   right: 870px;
-  width: 700px;
+  width: 100%;
+  height: 200px;
   top: 270px;
   color: #906046;
   font-weight: bolder;
+  /* background-color: red; */
 }
-  #skills{
-    position: relative;
-    top: 90px;
-    right: 340px;
-    font-size: 35px;
-    font-family: "Cormorant", serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-    text-align: center;
-    color: #906046;
-    text-decoration: underline;
-}
-#skil{
+#technical-skills {
+  position: relative;
+  bottom: 180px;
+  left: -370px;
+  font-size: 35px;
   font-family: "Cormorant", serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-    text-align: left;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  text-align: center;
+  color: #906046;
+  text-decoration: underline;
+}
+.technical-skills-swiper{
+  position: relative;
+  left: -490px;
+  top: -10px
+}
+#soft-skills {
+  position: relative;
+  top: 170px;
+  left: -520px;
+  font-size: 35px;
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  text-align: center;
+  color: #906046;
+  text-decoration: underline;
+}
+.soft-skills-swiper{
+  position: relative;
+  /* left: -350px; */
+
+  top: 340px;
+}
+#badges {
+  position: relative;
+  top: 530px;
+  left: -630px;
+  font-size: 35px;
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  text-align: center;
+  color: #906046;
+  text-decoration: underline;
+}
+.badges-swiper{
+  position: relative;
+  top: 690px;
+  left: -690px;
+}
+#skil {
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  /* text-align: left; */
 }
 .skills-container {
   position: relative;
   top: 20px;
   left: 280px;
+}
 
-  }
-  
-  .skills-card {
-    display: inline-block;
-    margin: 40px 40px;
-    padding: 20px;
-    border: 1px solid #b98E77;
-    border-radius: 10px;
-    background-color: white;
-    width: 150px;
-    box-shadow: 6px 6px 6px #8e634c;
-  }
-  
-  .skills-card img {
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-  }
-  #btn {
+.skills-card {
+  display: inline-block;
+  margin: 40px 40px;
+  padding: 20px;
+  border: 1px solid #b98e77;
+  border-radius: 10px;
+  background-color: white;
+  width: 150px;
+  box-shadow: 6px 6px 6px #8e634c;
+}
+
+.skills-card img {
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+#btn {
   text-align: center;
   margin-top: 20px;
   position: relative;
@@ -230,10 +314,10 @@ align-items: center;
 
 #btn:hover {
   background-color: #fff;
-  color: #b98E77;
+  color: #b98e77;
 }
 
- .image-background {
+.image-background {
   height: 100%;
   background-size: cover;
   background-position: center;
@@ -242,74 +326,75 @@ align-items: center;
   align-items: center;
 }
 #about {
-    position: relative;
-    bottom: 480px;
-    left: 710px;
-    font-family: "Cormorant", serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-    text-align: center;
-    color: #906046;
-    text-decoration: underline;
+  position: relative;
+  bottom: 750px;
+  left: 710px;
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  text-align: center;
+  color: #906046;
+  text-decoration: underline;
 }
 
 #backgroundd {
-    position: relative;
-    bottom: 230px;
-    background-color: #b98E77; 
-    color: white;
-    height: auto; 
-    margin-top: 30px;
-    left: 170px;
-    box-shadow: 8px 8px 8px #906046;
-    transition: transform 0.7s ease-out;
+  position: relative;
+  width: 250%;
+  bottom: 500px;
+  background-color: #b98e77;
+  color: white;
+  height: auto;
+  margin-top: 30px;
+  left: 190px;
+  box-shadow: 8px 8px 8px #906046;
+  transition: transform 0.7s ease-out;
 }
-#backgroundd:hover  {
-    background-color: #745646;
-    color: white; 
-    box-shadow: 8px 8px 8px #906046;
-    transform: scale(1.1) ;
+#backgroundd:hover {
+  background-color: #745646;
+  color: white;
+  box-shadow: 8px 8px 8px #906046;
+  transform: scale(1.1);
   transition: transform 0.7s ease-out;
 }
 #backgroundd:hover #description {
-  color: white; 
+  color: white;
 }
 #description {
-    margin-right: 50px;
-    text-align:justify;
-    font-style: italic;
-    color: white;
-    text-shadow: 2px 2px 4px #906046;
-    font-family: "Cormorant", serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-    position: relative;
+  margin-right: 50px;
+  text-align: justify;
+  font-style: italic;
+  color: white;
+  text-shadow: 2px 2px 4px #906046;
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  position: relative;
 }
 
-.img-fluid-sqare{
+.img-fluid-sqare {
   position: relative;
   top: 25px;
   right: 50px;
 }
 .swiper-wrapper {
-  padding: 0; 
-  margin: 0; 
+  padding: 0;
+  margin: 0;
 }
 
 @media only screen and (max-width: 600px) {
   .image-background {
-  height: auto;
-  display: flex;
-  width: auto !important;
-  margin: 0 !important;
-
-}
-  #about, #skills {
+    height: auto;
+    display: flex;
+    width: auto !important;
+    margin: 0 !important;
+  }
+  #about,
+  #skills {
     font-size: 25px;
   }
-  #skills{
+  #skills {
     position: relative;
     left: 270px;
   }
@@ -320,10 +405,10 @@ align-items: center;
     position: relative;
     right: 50px !important;
   }
-.skills-container{
-  position: relative;
-  margin-left: 500px !important;
-}
+  .skills-container {
+    position: relative;
+    margin-left: 500px !important;
+  }
   .skills-card {
     width: 100px;
     margin: 20px 20px;
@@ -337,9 +422,9 @@ align-items: center;
   }
 
   .swiper-slide {
-  margin: 0;
-  padding: 0;
-}
+    margin: 0;
+    padding: 0;
+  }
   .mySwiper {
     width: 600px;
     top: 150px;
@@ -348,14 +433,14 @@ align-items: center;
     padding: 0;
   }
   .mySwiper .swiper-wrapper {
-    width: auto !important; 
-    margin: 0; 
+    width: auto !important;
+    margin: 0;
     padding: 0;
   }
   .swiper-wrapper {
-  padding: 0; 
-  margin: 0; 
-}
+    padding: 0;
+    margin: 0;
+  }
   #description {
     font-size: 14px;
     margin-right: 20px;
@@ -365,5 +450,4 @@ align-items: center;
     font-size: 12px;
   }
 }
-
 </style>

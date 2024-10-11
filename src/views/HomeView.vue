@@ -1,9 +1,7 @@
 <template>
-
   <div class="home">
     <div class="image-background" :style="{ backgroundImage: `url(${imageUrl})` }">
       <div class="content">
-     
         <!-- <div class="sparkle-wrapper">
   <img id="profile-photo" src="https://nikilitha26.github.io/Boot-img/Image/IMG_8063.PNG" alt="Profile Photo" class="img-fluid  border-5 rounded-circle">
   <div class="sparkle" style="top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
@@ -13,29 +11,52 @@
   <div class="sparkle" style="top: 75%; left: 25%;"></div>
 </div> -->
         <div id="text" class="align-middle"></div>
-        <span id="niki" class="align-middle">Hello! I am </span> <br>
-        <h3 id="name" class=" fs-1">NIKILITHA KAKAZA</h3> 
+        <span id="niki" class="align-middle">Hello! I am </span> <br />
+        <h3 id="name" class="fs-1">NIKILITHA KAKAZA</h3>
         <div class="profile-titles">
-          <h3 id="profile-title-left" class="animate__animated animate__slideInLeft">~ASPIRING</h3>
-          <h3 id="profile-title-right" class="animate__animated animate__slideInRight">WEB DEVELOPER~</h3>
-        </div> <br>
-      
+          <h3 id="profile-title-left" class="animate__animated animate__slideInLeft">
+            ~ASPIRING
+          </h3>
+          <h3 id="profile-title-right" class="animate__animated animate__slideInRight">
+            WEB DEVELOPER~
+          </h3>
+        </div>
+        <br />
+
         <div class="container">
           <div id="row" class="row">
             <div id="icon" class="col-md-6">
               <a href="https://www.linkedin.com/in/nikilitha-kakaza-5a86462b9/">
-                <img id="custom-image" src="https://nikilitha26.github.io/Boot-img/Image/linkedin_black_logo_icon_147114.png " alt="" class="img-fluid border-5 rounded-circle custom-image" >
+                <img
+                  id="custom-image"
+                  src="https://nikilitha26.github.io/Boot-img/Image/linkedin_black_logo_icon_147114.png "
+                  alt=""
+                  class="img-fluid border-5 rounded-circle custom-image"
+                />
               </a>
             </div>
             <div id="icon2" class="col-md-6">
               <a href="https://github.com/Nikilitha26">
-                <img id="custom-image2" src="https://nikilitha26.github.io/Boot-img/Image/25231.png" alt="icon" class="img-fluid  border-5 rounded-circle custom-image2">
+                <img
+                  id="custom-image2"
+                  src="https://nikilitha26.github.io/Boot-img/Image/25231.png"
+                  alt="icon"
+                  class="img-fluid border-5 rounded-circle custom-image2"
+                />
               </a>
             </div>
           </div>
           <div class="download-cv-btn">
-            <a href="https://nikilitha26.github.io/vue.jsImages/Curriculum%20Vitae%20Of%20Nikilitha%20Kakaza%20.pdf" download>
-              <button id="btn" class="animate__animated animate__pulse animate__repeat animate__infinite">Download CV</button>
+            <a
+              href="https://nikilitha26.github.io/vue.jsImages/Nikilitha_Kakaza_Resume_61.pdf"
+              download
+            >
+              <button
+                id="btn"
+                class="animate__animated animate__pulse animate__repeat animate__infinite"
+              >
+                Download CV
+              </button>
             </a>
           </div>
         </div>
@@ -45,14 +66,14 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
-      imageUrl: 'https://nikilitha26.github.io/vue.jsImages/3890c7f5219ed01e7c531bc989f37b5f.jpg' 
-    }
-  }
-}
+      imageUrl:
+        "https://nikilitha26.github.io/vue.jsImages/3890c7f5219ed01e7c531bc989f37b5f.jpg",
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -61,10 +82,9 @@ export default {
   margin: 0;
   background-color: hite;
   font-family: "Cormorant", serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-    
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
 }
 
 .image-background {
@@ -78,7 +98,7 @@ export default {
 }
 
 .content {
-  color: #BDA18C;
+  color: #bda18c;
   text-align: center;
 }
 
@@ -90,18 +110,18 @@ export default {
   clear: both;
 } */
 #profile-photo {
-    width: 250px;
-    height: 250px;
-    margin-top: 100px;
-    border: 5px solid #BDA18C;
-    border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  margin-top: 100px;
+  border: 5px solid #bda18c;
+  border-radius: 50%;
 }
 #custom-image {
   width: 50px;
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #A7795E;
+  border: 5px solid #a7795e;
 }
 
 #custom-image2 {
@@ -109,7 +129,7 @@ export default {
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #A7795E;
+  border: 5px solid #a7795e;
 }
 #btn {
   text-align: center;
@@ -119,7 +139,7 @@ export default {
 }
 
 #btn {
-  background-color: #A7795E;
+  background-color: #a7795e;
   color: #fff;
   border: none;
   padding: 10px 10px;
@@ -130,29 +150,29 @@ export default {
 
 #btn:hover {
   background-color: #fff;
-  color: #A7795E;
+  color: #a7795e;
 }
-#niki{
-    width: 108px; 
-    height: 12px; 
-    font-size: 50px; 
-    color: black;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bolder;
+#niki {
+  width: 108px;
+  height: 12px;
+  font-size: 50px;
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bolder;
 }
 #profile-title-left {
-    color: black;
-    font-size: 20px;
-    font-weight: 600;
-    position: relative;
-    left: 20px;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  left: 20px;
 }
 #profile-title-right {
-    position: relative;
-    left: -50px;
-    color: black;
-    font-size: 20px;
-    font-weight: 600;
+  position: relative;
+  left: -50px;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
 }
 .profile-titles {
   display: flex;
@@ -160,48 +180,51 @@ export default {
   align-items: center;
 }
 
-#profile-title-left, #profile-title-right {
+#profile-title-left,
+#profile-title-right {
   flex: 1;
 }
-#name{
+#name {
   color: black;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-#row{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #custom-image, #custom-image2 {
-    margin: 0 70px;
-  }
+#row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#custom-image,
+#custom-image2 {
+  margin: 0 70px;
+}
 
-  .slide-from-left {
+.slide-from-left {
   animation: slide-from-left 1s forwards;
 }
 
 .slide-from-right {
   animation: slide-from-right 1s forwards;
 }
-#custom-image2{
-    position: relative;
-    bottom: -4px;
-    left: 30px;
-  }
-  #custom-image{
-    position: relative;
-    right: 30px;
-  }
-  #row {
-    flex-direction: row;
-    align-items: center;
-  }
-  #icon, #icon2 {
-    margin: 1px 0;
-  }
-  #btn {
-    margin-top: 20px;
-  }
+#custom-image2 {
+  position: relative;
+  bottom: -4px;
+  left: 30px;
+}
+#custom-image {
+  position: relative;
+  right: 30px;
+}
+#row {
+  flex-direction: row;
+  align-items: center;
+}
+#icon,
+#icon2 {
+  margin: 1px 0;
+}
+#btn {
+  margin-top: 20px;
+}
 
 @keyframes slide-from-left {
   0% {
@@ -221,10 +244,10 @@ export default {
   }
 }
 .animate__animated {
-    animation-duration: 1s;
-  }
+  animation-duration: 1s;
+}
 
-   /* Animation */
+/* Animation */
 .slide-from-left {
   animation: slide-from-left 1s forwards;
 }
@@ -242,7 +265,6 @@ export default {
 .sparkle-wrapper {
   position: relative;
   width: 300px;
-  
 }
 
 .sparkle {
@@ -252,8 +274,19 @@ export default {
   transform: translate(-50%, -50%);
   width: 15px;
   height: 15px;
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  background-color: #BDA18C; 
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  background-color: #bda18c;
   animation: sparkle 2s infinite;
 }
 
@@ -264,8 +297,19 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  background-color: #BDA18C;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  background-color: #bda18c;
   animation: sparkle-before 2s infinite;
 }
 
@@ -310,86 +354,82 @@ export default {
       width: 600px;
    }
   } */
-  
-  @media  (max-width: 600px) {
-   .home {
-      /* height: auto !important; */
-      width: 600px;
-      min-height: 100vh; 
-      
-    }
-   .image-background {
-      min-height: 100vh !important ;
-      /* width: 600px; */
-   }
-   /* .content {
+
+@media (max-width: 600px) {
+  .home {
+    /* height: auto !important; */
+    width: 600px;
+    min-height: 100vh;
+  }
+  .image-background {
+    min-height: 100vh !important ;
+    /* width: 600px; */
+  }
+  /* .content {
       padding: 8px;
       position: relative;
       top: 50px;
     } */
-    #profile-photo {
-      width: 100px;
-      height: 100px;
-      margin-top: 15px;
-    }
-    .profile-titles{
-      font-size: -200px;
-    }
-    #profile-title-left{
-      font-size: -2px;
-      margin-bottom: 70px;
-      position: relative;
-      left: 80px;
-    }
-    
-   
-    #custom-image {
-      width: 40px;
-      height: 40px;
-      margin: 0 10px;
-      position: relative;
-      right: 80px;
-      top: 20px;
-    }
-    #btn {
-      font-size: 14px;
-      padding: 5px;
-      margin-top: 8px;
-      margin-left: 30px;
-      /* position: relative;
+  #profile-photo {
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+  }
+  .profile-titles {
+    font-size: -200px;
+  }
+  #profile-title-left {
+    font-size: -2px;
+    margin-bottom: 70px;
+    position: relative;
+    left: 80px;
+  }
+
+  #custom-image {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    position: relative;
+    right: 80px;
+    top: 20px;
+  }
+  #btn {
+    font-size: 14px;
+    padding: 5px;
+    margin-top: 8px;
+    margin-left: 30px;
+    /* position: relative;
       top: 20px; */
-      
-    }
-    #custom-image2{
-      width: 40px;
-      height: 40px;
-      margin: 0 10px;
-      position: relative;
-      bottom: 20px;
-      left: 110px;
-    }
-    #niki{
-      font-size: 38px;
-    }
-    #name{
-      font-size: 16px;
-    }
-    #profile-title-left{
-      font-size: 18px;
-    }
-    #profile-title-right{
-      font-size: 18px;
-    }
-    .profile-titles {
+  }
+  #custom-image2 {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    position: relative;
+    bottom: 20px;
+    left: 110px;
+  }
+  #niki {
+    font-size: 38px;
+  }
+  #name {
+    font-size: 16px;
+  }
+  #profile-title-left {
+    font-size: 18px;
+  }
+  #profile-title-right {
+    font-size: 18px;
+  }
+  .profile-titles {
     white-space: nowrap;
     position: relative;
-    right: 1  0px;
+    right: 1 0px;
   }
-  #profile-title-left, #profile-title-right {
+  #profile-title-left,
+  #profile-title-right {
     display: inline-block;
     margin: 0 68px;
   }
-
-  }
-
+}
 </style>
