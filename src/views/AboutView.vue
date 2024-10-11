@@ -36,7 +36,7 @@
           </div>
         </div>
       </div>
-
+      
       <h2 id="technical-skills" class="animate__animated animate__slideInLeft">TECHNICAL SKILLS</h2>
       <swiper
         ref="swiperRef"
@@ -48,13 +48,14 @@
         }"
         :navigation="true"
         :modules="modules"
-        class="mySwiper"
+        class="mySwiper technical-skills-swiper"
       >
-        <swiper-slide v-for="skill in $store.state.technicalSkills" :key="skill.id">
+        <swiper-slide v-for="skill in $store.state.technicalskills" :key="skill.id">
           <div class="skills-card">
             <img :src="skill.image" alt="Skill Image" />
             <p id="skil">{{ skill.name }}</p>
           </div>
+          {{ console.log('Swiper slide rendered') }}
         </swiper-slide>
       </swiper>
 
@@ -69,17 +70,18 @@
         }"
         :navigation="true"
         :modules="modules"
-        class="mySwiper"
+        class="mySwiper soft-skills-swiper"
       >
-        <swiper-slide v-for="skill in $store.state.softSkills" :key="skill.id">
+        <swiper-slide v-for="skill in $store.state.softskills" :key="skill.id">
           <div class="skills-card">
             <img :src="skill.image" alt="Skill Image" />
             <p id="skil">{{ skill.name }}</p>
           </div>
+          {{ console.log('Swiper slide rendered') }}
         </swiper-slide>
       </swiper>
 
-      <h2 id="badges" class="animate__animated animate__slideInLeft">BADGES</h2>
+      <h2 id="badges" class="animate__animated animate__slideInLeft">MY BADGES</h2>
       <swiper
         ref="swiperRef"
         :slidesPerView="3"
@@ -90,13 +92,14 @@
         }"
         :navigation="true"
         :modules="modules"
-        class="mySwiper"
+        class="mySwiper badges-swiper"
       >
-        <swiper-slide v-for="badge in $store.state.myBadges" :key="badge.id">
+        <swiper-slide v-for="badge in $store.state.mybadges" :key="badge.id">
           <div class="skills-card">
             <img :src="badge.image" alt="Badge Image" />
             <p id="skil">{{ badge.name }}</p>
           </div>
+          {{ console.log('Swiper slide rendered') }}
         </swiper-slide>
       </swiper>
     </div>
@@ -114,22 +117,19 @@ export default {
     getEducation() {
       return this.$store.state.education;
     },
-    async getData() {
-  console.log("Fetching data...");
-  await this.$store.dispatch("getData");
-  console.log("Data fetched:", JSON.parse(JSON.stringify(this.$store.state)));
-  return this.$store.state;
-},
+    getData() {
+      return this.$store.dispatch("getData");
+    },
   },
   mounted() {
-    this.getData();
-  },
+  console.log('Swiper components initialized');
+  this.getData();
+},
   components: {
     Swiper,
     SwiperSlide,
   },
   setup() {
-    console.log("Setting up...");
     return {
       modules: [Pagination, Navigation],
     };
@@ -154,10 +154,11 @@ body {
 }
 
 .about {
-  height: 160vh;
+  height: 240vh;
   margin: 0;
   margin-top: 100px;
 }
+
 
 .swiper-slide {
   text-align: center;
@@ -216,15 +217,17 @@ body {
 .mySwiper {
   position: relative;
   right: 870px;
-  width: 100vw;
+  width: 100%;
+  height: 200px;
   top: 270px;
   color: #906046;
   font-weight: bolder;
+  /* background-color: red; */
 }
-#skills {
+#technical-skills {
   position: relative;
-  top: 90px;
-  left: -400px;
+  bottom: 180px;
+  left: -370px;
   font-size: 35px;
   font-family: "Cormorant", serif;
   font-optical-sizing: auto;
@@ -233,6 +236,48 @@ body {
   text-align: center;
   color: #906046;
   text-decoration: underline;
+}
+.technical-skills-swiper{
+  position: relative;
+  left: -490px;
+  top: -10px
+}
+#soft-skills {
+  position: relative;
+  top: 170px;
+  left: -520px;
+  font-size: 35px;
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  text-align: center;
+  color: #906046;
+  text-decoration: underline;
+}
+.soft-skills-swiper{
+  position: relative;
+  /* left: -350px; */
+
+  top: 340px;
+}
+#badges {
+  position: relative;
+  top: 530px;
+  left: -630px;
+  font-size: 35px;
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  text-align: center;
+  color: #906046;
+  text-decoration: underline;
+}
+.badges-swiper{
+  position: relative;
+  top: 690px;
+  left: -690px;
 }
 #skil {
   font-family: "Cormorant", serif;
@@ -298,7 +343,7 @@ body {
 }
 #about {
   position: relative;
-  bottom: 480px;
+  bottom: 750px;
   left: 710px;
   font-family: "Cormorant", serif;
   font-optical-sizing: auto;
@@ -311,13 +356,13 @@ body {
 
 #backgroundd {
   position: relative;
-  width: 150%;
-  bottom: 230px;
+  width: 250%;
+  bottom: 500px;
   background-color: #b98e77;
   color: white;
   height: auto;
   margin-top: 30px;
-  left: 130px;
+  left: 190px;
   box-shadow: 8px 8px 8px #906046;
   transition: transform 0.7s ease-out;
 }
