@@ -73,9 +73,9 @@
         class="mySwiper soft-skills-swiper"
       >
         <swiper-slide v-for="skill in $store.state.softskills" :key="skill.id">
-          <div class="skills-card">
-            <img :src="skill.image" alt="Skill Image" />
-            <p id="skil">{{ skill.name }}</p>
+          <div id="card" class="skillss-card">
+            <img id="softimage" :src="skill.image" alt="Skill Image" />
+            <p id="skils">{{ skill.name }}</p>
           </div>
           {{ console.log('Swiper slide rendered') }}
         </swiper-slide>
@@ -169,6 +169,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-right: 0;
+  gap: 20px;
 }
 .swiper-navigation {
   widows: 200px;
@@ -255,6 +256,14 @@ body {
   color: #906046;
   text-decoration: underline;
 }
+#softimage{
+  /* justify-content: center; */
+  width: 50px;
+  height: 50px;
+  margin-bottom: 30px;
+  position: relative;
+  left: 20px;
+}
 .soft-skills-swiper{
   position: relative;
   /* left: -350px; */
@@ -294,13 +303,29 @@ body {
 
 .skills-card {
   display: inline-block;
-  margin: 40px 40px;
+  margin: 40px 20px 40px 20px;
   padding: 20px;
   border: 1px solid #b98e77;
   border-radius: 10px;
   background-color: white;
   width: 150px;
+  height: 130px;
   box-shadow: 6px 6px 6px #8e634c;
+
+}
+.skillss-card {
+  display: inline-block;
+  margin: 40px 10px !important;
+  padding: 5px;
+  border: 1px solid #b98e77;
+  border-radius: 10px;
+  background-color: white;
+  width: 200px !important;
+  height: 130px;
+  box-shadow: 6px 6px 6px #8e634c;
+  /* position: relative;
+  left: 20px;
+  right: 10px; */
 }
 
 .skills-card img {
@@ -308,6 +333,15 @@ body {
   width: 50px;
   height: 50px;
   margin-bottom: 10px;
+}
+#skils{
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  /* text-align: left; */
+  position: relative;
+  bottom: 25px;
 }
 #btn {
   text-align: center;
