@@ -5,44 +5,28 @@
   />
   <div class="about">
     <div class="image-background">
-      <h2 id="about" class="animate__animated animate__slideInLeft">ABOUT</h2>
-      <div id="backgroundd" class="container rounded p-4 bg-opacity-25">
-        <div class="row d-flex align-items-right">
-          <div class="col-md-6">
-            <img
-              id="img"
-              src="https://nikilitha26.github.io/vue.jsImages/WhatsApp%20Image%202024-10-04%20at%2013.25.10_47246c9b.jpg"
-              alt="Image"
-              class="img-fluid-sqare"
-              style="width: 250px; height: 300px; margin-left: 100px"
-            />
+
+      <h2 id="about" class="animate__animated animate__slideInLeft">ABOUT</h2 >
+        <div id="backgroundd" class="container rounded p-4 bg-opacity-25" >
+            <div class="row d-flex align-items-right">
+              <div class="col-md-6">
+                <img id="img" src="https://nikilitha26.github.io/vue.jsImages/WhatsApp%20Image%202024-10-04%20at%2013.25.10_47246c9b.jpg" alt="Image" class="img-fluid-sqare" style="width: 250px; height: 300px; margin-left: 100px;">
+              </div>
+              <div class="col-md-6 text-white" >
+                <p id="description" style="margin-right: 50px; font-style: italic;">
+                  "My name is Nikilitha Kakaza,born on the 26th of June 2003. I was born and raised in Cape Town in a township called Khayelitsha. I chose web development because I think having an online presence is essential to any business's success. Although I am aware of the opportunities, I would prefer to concentrate on coding and designing stunning websites rather than freelancing. I like to cook and doing make-up(content creation) on my spare time. I graduted in 2024, I graduated in Psychology at the Nelson Mandela University. I did this course becaus I was not sure of what I really wanted at first, but now I finally dicided to do coding which I enjoy so much. A true defination of 'follow what your heart desires'. I love exploring and trying out new ideas based on the knowledge I have, so if you think you share the same sentiment as mine, don't be scared to contact me and we shall work magic. 😊"
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="col-md-6 text-white">
-            <p id="description" style="margin-right: 50px; font-style: italic">
-              "My name is Nikilitha Kakaza,born on the 26th of June 2003. I was born and
-              raised in Cape Town in a township called Khayelitsha. I chose web
-              development because I think having an online presence is essential to any
-              business's success. Although I am aware of the opportunities, I would prefer
-              to concentrate on coding and designing stunning websites rather than
-              freelancing. I like to cook and doing make-up(content creation) on my spare
-              time. I graduted in 2024, I graduated in Psychology at the Nelson Mandela
-              University. I did this course becaus I was not sure of what I really wanted
-              at first, but now I finally dicided to do coding which I enjoy so much. A
-              true defination of 'follow what your heart desires'. I love exploring and
-              trying out new ideas based on the knowledge I have, so if you think you
-              share the same sentiment as mine, don't be scared to contact me and we shall
-              work magic. 😊"
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <h2 id="technical-skills" class="animate__animated animate__slideInLeft">TECHNICAL SKILLS</h2>
-      <swiper
+
+        <h2 id="skills" class="animate__animated animate__slideInLeft">SKILLS</h2>
+      <div class="skills-container">
+        <swiper
         ref="swiperRef"
         :slidesPerView="3"
         :centeredSlides="true"
-        :spaceBetween="30"
+        :spaceBetween="0"
         :pagination="{
           type: 'fraction',
         }"
@@ -192,7 +176,7 @@ body {
   --swiper-navigation-color: #906046;
   --swiper-navigation-width: 700px;
 }
-.swiper-wrapper {
+.swiper-wrapper{
   margin: 0;
 }
 .append-buttons {
