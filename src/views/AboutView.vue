@@ -20,8 +20,8 @@
             </div>
           </div>
 
-        <h2 id="skills" class="animate__animated animate__slideInLeft">SKILLS</h2>
-      <div class="skills-container">
+        <h2 id="technical-skills" class="animate__animated animate__slideInLeft">TECHNICAL SKILLS</h2>
+      <!-- <div class="skills-container"> -->
         <swiper
         ref="swiperRef"
         :slidesPerView="3"
@@ -36,7 +36,7 @@
       >
         <swiper-slide v-for="skill in $store.state.technicalskills" :key="skill.id">
           <div class="skills-card">
-            <img :src="skill.image" alt="Skill Image" />
+            <img :strc="skill.image" alt="Skill Image" />
             <p id="skil">{{ skill.name }}</p>
           </div>
           {{ console.log('Swiper slide rendered') }}
@@ -59,7 +59,7 @@
         <swiper-slide v-for="skill in $store.state.softskills" :key="skill.id">
           <div id="card" class="skillss-card">
             <img id="softimage" :src="skill.image" alt="Skill Image" />
-            <p id="skils">{{ skill.name }}</p>
+            <p id="sskils" class="sskils">{{ skill.name }}</p>
           </div>
           {{ console.log('Swiper slide rendered') }}
         </swiper-slide>
@@ -79,15 +79,17 @@
         class="mySwiper badges-swiper"
       >
         <swiper-slide v-for="badge in $store.state.mybadges" :key="badge.id">
-          <div class="skills-card">
-            <img :src="badge.image" alt="Badge Image" />
+          <div id="badge" class="skills-card">
+            <img class="image" :src="badge.image" alt="Badge Image" />
             <p id="skil">{{ badge.name }}</p>
+            <!-- <p id="skil"> {{ badge.certificate }}</p> -->
           </div>
           {{ console.log('Swiper slide rendered') }}
         </swiper-slide>
       </swiper>
     </div>
   </div>
+  <!-- </div> -->
 </template>
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -128,7 +130,7 @@ body {
 .image-background {
   height: 100%;
   width: 100%;
-  background-image: url("https://i.pinimg.com/564x/db/71/eb/db71eb556f9ca6b9510391ed1ba528d4.jpg");
+  background-image: url("https://nikilitha26.github.io/vue.jsImages/db71eb556f9ca6b9510391ed1ba528d4.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -153,10 +155,9 @@ body {
   justify-content: center;
   align-items: center;
   margin-right: 0;
-  gap: 20px;
 }
 .swiper-navigation {
-  widows: 200px;
+  widows: 200px ;
 }
 .swiper-slide img {
   display: block;
@@ -176,7 +177,7 @@ body {
   --swiper-navigation-color: #906046;
   --swiper-navigation-width: 700px;
 }
-.swiper-wrapper{
+.swiper-wrapper {
   margin: 0;
 }
 .append-buttons {
@@ -186,7 +187,9 @@ body {
   color: #906046;
   font-weight: bolder;
 }
-
+.swiper-button-next{
+margin-left: 200px;
+}
 .append-buttons button {
   display: inline-block;
   cursor: pointer;
@@ -226,6 +229,17 @@ body {
   position: relative;
   left: -490px;
   top: -10px
+}
+#card {
+  display: inline-block;
+  margin: 40px 40px;
+  padding: 5px;
+  border: 1px solid #b98e77;
+  border-radius: 10px;
+  background-color: white;
+  width: 150px!important;
+  height: 130px;
+  box-shadow: 6px 6px 6px #8e634c;
 }
 #soft-skills {
   position: relative;
@@ -267,10 +281,36 @@ body {
   color: #906046;
   text-decoration: underline;
 }
+#badge{
+  height: 160px;
+}
 .badges-swiper{
   position: relative;
   top: 690px;
-  left: -690px;
+  left: -740px;
+}
+.image{
+  width: 70px !important;
+  height: 70px !important;
+  margin-bottom: 30px;
+  position: relative;
+  /* left: 20px; */
+}
+#tskil {
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  /* text-align: left; */
+}
+#sskils {
+  position: relative;
+  bottom: 10px;
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  /* text-align: left; */
 }
 #skil {
   font-family: "Cormorant", serif;
@@ -287,29 +327,14 @@ body {
 
 .skills-card {
   display: inline-block;
-  margin: 40px 20px 40px 20px;
+  margin: 40px 40px;
   padding: 20px;
   border: 1px solid #b98e77;
   border-radius: 10px;
   background-color: white;
   width: 150px;
-  height: 130px;
+  height: 140px;
   box-shadow: 6px 6px 6px #8e634c;
-
-}
-.skillss-card {
-  display: inline-block;
-  margin: 40px 10px !important;
-  padding: 5px;
-  border: 1px solid #b98e77;
-  border-radius: 10px;
-  background-color: white;
-  width: 200px !important;
-  height: 130px;
-  box-shadow: 6px 6px 6px #8e634c;
-  /* position: relative;
-  left: 20px;
-  right: 10px; */
 }
 
 .skills-card img {
@@ -317,15 +342,6 @@ body {
   width: 50px;
   height: 50px;
   margin-bottom: 10px;
-}
-#skils{
-  font-family: "Cormorant", serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
-  /* text-align: left; */
-  position: relative;
-  bottom: 25px;
 }
 #btn {
   text-align: center;
