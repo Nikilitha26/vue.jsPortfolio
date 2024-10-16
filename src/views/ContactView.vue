@@ -64,7 +64,6 @@
       <button @click="closePopup">Close</button>
     </div>
   </div>
-
   </div>
 </template>
 
@@ -115,8 +114,8 @@ export default {
   <style scoped>
   body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  background-image: url('https://i.pinimg.com/564x/af/ed/57/afed57c024c97924cee749bd8c01261a.jpg');
+  background-color: #d5d0d0;
+  /* background-image: url('https://i.pinimg.com/564x/af/ed/57/afed57c024c97924cee749bd8c01261a.jpg'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -283,17 +282,16 @@ export default {
       width: 100%;
     }
     .container{
-        width: 80%;
-        font-size: 14px;
-         
-  padding: 20px 30px; 
-  background-color: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-family: "Cormorant", serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
+      width: 80%;
+      font-size: 14px;
+      padding: 20px 30px; 
+      background-color: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      font-family: "Cormorant", serif;
+      font-optical-sizing: auto;
+      font-weight: 800;
+      font-style: normal;
     }
     .contact{
         position: relative;

@@ -1,8 +1,7 @@
 <template>
   <link
     rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-  />
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
   <div class="about">
     <div class="image-background">
 
@@ -82,7 +81,9 @@
           <div id="badge" class="skills-card">
             <img class="image" :src="badge.image" alt="Badge Image" />
             <p id="skil">{{ badge.name }}</p>
-            <!-- <p id="skil"> {{ badge.certificate }}</p> -->
+            <a :href="badge.certificate" download>
+            <i id="icon" class="fas fa-download"></i>
+            </a>
           </div>
           {{ console.log('Swiper slide rendered') }}
         </swiper-slide>
@@ -130,7 +131,8 @@ body {
 .image-background {
   height: 100%;
   width: 100%;
-  background-image: url("https://nikilitha26.github.io/vue.jsImages/db71eb556f9ca6b9510391ed1ba528d4.jpg");
+  /* background-color: F3F3F3); */
+  /* background-image: url("https://nikilitha26.github.io/vue.jsImages/db71eb556f9ca6b9510391ed1ba528d4.jpg"); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -158,6 +160,10 @@ body {
 }
 .swiper-navigation {
   widows: 200px ;
+}
+.swiper-pagination{
+  position: relative;
+  top: 20px !important;
 }
 .swiper-slide img {
   display: block;
@@ -206,7 +212,7 @@ margin-left: 200px;
   position: relative;
   right: 870px;
   width: 100%;
-  height: 200px;
+  height: 300px;
   top: 270px;
   color: #906046;
   font-weight: bolder;
@@ -243,7 +249,7 @@ margin-left: 200px;
 }
 #soft-skills {
   position: relative;
-  top: 170px;
+  top: 190px;
   left: -520px;
   font-size: 35px;
   font-family: "Cormorant", serif;
@@ -282,7 +288,12 @@ margin-left: 200px;
   text-decoration: underline;
 }
 #badge{
-  height: 160px;
+  height: 180px;
+}
+#icon{
+  color: #745646;
+  position: relative;
+  bottom: 20px;
 }
 .badges-swiper{
   position: relative;
@@ -433,7 +444,7 @@ margin-left: 200px;
   margin: 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 320px) {
   .image-background {
     height: auto;
     display: flex;
@@ -444,9 +455,113 @@ margin-left: 200px;
   #skills {
     font-size: 25px;
   }
+  #about{
+    position: relative;
+    top: -340px;
+    left: 530px!important;
+  }
   #skills {
     position: relative;
-    left: 270px;
+    left: 570px;
+  }
+
+  #img {
+    width: 170px !important;
+    height: 170px !important;
+    position: relative;
+    right: 50px !important;
+  }
+  .skills-container {
+    position: relative;
+    margin-left: 500px !important;
+  }
+  .skills-card {
+    width: 100px;
+    margin: 20px 20px;
+    padding: 10px;
+  }
+
+  .skills-card img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+
+  .swiper-slide {
+    margin: 0;
+    padding: 0;
+  }
+  .mySwiper {
+    width: 600px;
+    top: 150px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    margin-right: 1in;
+    position: relative;
+    left: 350px;
+  }
+  .mySwiper .swiper-wrapper {
+    width: auto !important;
+    margin: 0;
+    padding: 0;
+  }
+  .swiper-wrapper {
+    padding: 0;
+    margin: 0;
+  }
+  #backgroundd{
+    position: relative;
+    top: 130px;
+    left: 320px;
+    height: 135vh;
+  }
+  #description {
+    font-size: 14px;
+    margin-left: 30px;
+    margin-top: 60px;
+  }
+  .technical-skills-swiper{
+  position: relative;
+  right: 50px;
+  top: 10px
+}
+  #btn {
+    width: 80px;
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* .about{
+    height: ;
+  } */
+  .image-background {
+    height: auto;
+    display: flex;
+    width: auto !important;
+    margin: 0 !important;
+  }
+  #about{
+    position: relative;
+    bottom: 340px;
+    left: 400px;
+    font-size: 25px;
+  }
+  #description {
+    font-size: 14px;
+    margin-right: 20px;
+  }
+  #backgroundd{
+    position: relative;
+    top: 130px;
+    left: 200px;
+    height: 135vh;
+  }
+  #technical-skills {
+    position: relative;
+    left: -30px;
+    top: 620px;
+    font-size: 25px;
   }
 
   #img {
@@ -490,10 +605,6 @@ margin-left: 200px;
   .swiper-wrapper {
     padding: 0;
     margin: 0;
-  }
-  #description {
-    font-size: 14px;
-    margin-right: 20px;
   }
   #btn {
     width: 80px;

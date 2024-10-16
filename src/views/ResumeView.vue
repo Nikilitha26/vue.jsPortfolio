@@ -83,7 +83,7 @@ export default {
   margin: 0;
   overflow-x: hidden;
   margin-top: 110px;
-  background-image: url("https://i.pinimg.com/564x/db/71/eb/db71eb556f9ca6b9510391ed1ba528d4.jpg");
+  /* background-image: url("https://i.pinimg.com/564x/db/71/eb/db71eb556f9ca6b9510391ed1ba528d4.jpg"); */
   background-size: cover;
   background-position: center;
 }

@@ -70,7 +70,7 @@ export default {
   data() {
     return {
       imageUrl:
-        "https://nikilitha26.github.io/vue.jsImages/3890c7f5219ed01e7c531bc989f37b5f.jpg",
+        "https://i.pinimg.com/564x/7f/ed/21/7fed218a46f273ab3b7f7c291325508c.jpg",
     };
   },
 };
@@ -357,12 +357,12 @@ export default {
 
 @media (max-width: 600px) {
   .home {
-    /* height: auto !important; */
+    height: auto !important;
     width: 600px;
-    min-height: 100vh;
+    height: 157vh;
   }
   .image-background {
-    min-height: 100vh !important ;
+    min-height: 157vh !important ;
     /* width: 600px; */
   }
   /* .content {
@@ -430,6 +430,31 @@ export default {
   #profile-title-right {
     display: inline-block;
     margin: 0 68px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .image-background{
+    height: 78vh;
+  }
+  .home{
+    height: 78vh
+  }
+}
+@media (max-width: 1440px) {
+  .image-background{
+    height: 78vh;
+  }
+  .home{
+    height: 78vh
+  }
+}
+@media (max-width: 2560px) {
+  .image-background{
+    height: 88vh;
+  }
+  .home{
+    height: 88vh;
   }
 }
 </style>

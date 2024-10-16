@@ -153,10 +153,10 @@ export default {
   margin-top: -25px;
   /* margin-top: 0;
   padding-top: 0; */
-  background-image: url("https://i.pinimg.com/564x/db/71/eb/db71eb556f9ca6b9510391ed1ba528d4.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* background-image: url("https://i.pinimg.com/564x/db/71/eb/db71eb556f9ca6b9510391ed1ba528d4.jpg"); */
+  /* background-size: cover; */
+  /* background-position: center;
+  background-repeat: no-repeat; */
 }
 
 .card-title {
