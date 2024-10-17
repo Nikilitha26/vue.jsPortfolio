@@ -133,9 +133,9 @@ body {
   width: 100%;
   /* background-color: F3F3F3); */
   /* background-image: url("https://nikilitha26.github.io/vue.jsImages/db71eb556f9ca6b9510391ed1ba528d4.jpg"); */
-  background-size: cover;
+  /* background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   display: flex;
   justify-content: center;
   align-items: center;
