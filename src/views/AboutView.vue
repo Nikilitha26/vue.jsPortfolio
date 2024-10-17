@@ -81,6 +81,7 @@
           <div id="badge" class="skills-card">
             <img class="image" :src="badge.image" alt="Badge Image" />
             <p id="skil">{{ badge.name }}</p>
+            <!-- <p id="skil"> {{ badge.certificate }}</p> -->
             <a :href="badge.certificate" download>
             <i id="icon" class="fas fa-download"></i>
             </a>
