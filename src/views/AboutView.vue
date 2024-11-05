@@ -1,27 +1,47 @@
 <template>
   <link
     rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  />
   <div class="about">
     <div class="image-background">
-
-      <h2 id="about" class="animate__animated animate__slideInLeft">ABOUT</h2 >
-        <div id="backgroundd" class="container rounded p-4 bg-opacity-25" >
-            <div class="row d-flex align-items-right">
-              <div class="col-md-6">
-                <img id="img" src="https://nikilitha26.github.io/vue.jsImages/WhatsApp%20Image%202024-10-04%20at%2013.25.10_47246c9b.jpg" alt="Image" class="img-fluid-sqare" style="width: 250px; height: 300px; margin-left: 100px;">
-              </div>
-              <div class="col-md-6 text-white" >
-                <p id="description" style="margin-right: 50px; font-style: italic;">
-                  "My name is Nikilitha Kakaza,born on the 26th of June 2003. I was born and raised in Cape Town in a township called Khayelitsha. I chose web development because I think having an online presence is essential to any business's success. Although I am aware of the opportunities, I would prefer to concentrate on coding and designing stunning websites rather than freelancing. I like to cook and doing make-up(content creation) on my spare time. I graduted in 2024, I graduated in Psychology at the Nelson Mandela University. I did this course becaus I was not sure of what I really wanted at first, but now I finally dicided to do coding which I enjoy so much. A true defination of 'follow what your heart desires'. I love exploring and trying out new ideas based on the knowledge I have, so if you think you share the same sentiment as mine, don't be scared to contact me and we shall work magic. 😊"
-                </p>
-              </div>
-            </div>
+      <h2 id="about" class="animate__animated animate__slideInLeft">ABOUT</h2>
+      <div id="backgroundd" class="container rounded p-4 bg-opacity-25">
+        <div class="row d-flex align-items-right">
+          <div class="col-md-6">
+            <img
+              id="img"
+              src="https://nikilitha26.github.io/vue.jsImages/WhatsApp%20Image%202024-10-04%20at%2013.25.10_47246c9b.jpg"
+              alt="Image"
+              class="img-fluid-sqare"
+              style="width: 250px; height: 300px; margin-left: 100px"
+            />
           </div>
+          <div class="col-md-6 text-white">
+            <p id="description" style="margin-right: 50px; font-style: italic">
+              "My name is Nikilitha Kakaza,born on the 26th of June 2003. I was born and
+              raised in Cape Town in a township called Khayelitsha. I chose web
+              development because I think having an online presence is essential to any
+              business's success. Although I am aware of the opportunities, I would prefer
+              to concentrate on coding and designing stunning websites rather than
+              freelancing. I like to cook and doing make-up(content creation) on my spare
+              time. I graduted in 2024, I graduated in Psychology at the Nelson Mandela
+              University. I did this course becaus I was not sure of what I really wanted
+              at first, but now I finally dicided to do coding which I enjoy so much. A
+              true defination of 'follow what your heart desires'. I love exploring and
+              trying out new ideas based on the knowledge I have, so if you think you
+              share the same sentiment as mine, don't be scared to contact me and we shall
+              work magic. 😊"
+            </p>
+          </div>
+        </div>
+      </div>
 
-        <h2 id="technical-skills" class="animate__animated animate__slideInLeft">TECHNICAL SKILLS</h2>
+      <h2 id="technical-skills" class="animate__animated animate__slideInLeft">
+        TECHNICAL SKILLS
+      </h2>
       <!-- <div class="skills-container"> -->
-        <swiper
+      <swiper
         ref="swiperRef"
         :slidesPerView="3"
         :centeredSlides="true"
@@ -33,16 +53,16 @@
         :modules="modules"
         class="mySwiper technical-skills-swiper"
       >
-        <swiper-slide v-for="skill in $store.state.technicalskills" :key="skill.id">
+        <swiper-slide v-for="skill in $store.state.skills" :key="skill.id">
           <div class="skills-card">
             <img :strc="skill.image" alt="Skill Image" />
             <p id="skil">{{ skill.name }}</p>
           </div>
-          {{ console.log('Swiper slide rendered') }}
+          {{ console.log("Swiper slide rendered") }}
         </swiper-slide>
       </swiper>
 
-      <h2 id="soft-skills" class="animate__animated animate__slideInLeft">SOFT SKILLS</h2>
+      <!-- <h2 id="soft-skills" class="animate__animated animate__slideInLeft">SOFT SKILLS</h2>
       <swiper
         ref="swiperRef"
         :slidesPerView="3"
@@ -62,7 +82,7 @@
           </div>
           {{ console.log('Swiper slide rendered') }}
         </swiper-slide>
-      </swiper>
+      </swiper> -->
 
       <h2 id="badges" class="animate__animated animate__slideInLeft">MY BADGES</h2>
       <swiper
@@ -83,10 +103,10 @@
             <p id="skil">{{ badge.name }}</p>
             <!-- <p id="skil"> {{ badge.certificate }}</p> -->
             <a :href="badge.certificate" download>
-            <i id="icon" class="fas fa-download"></i>
+              <i id="icon" class="fas fa-download"></i>
             </a>
           </div>
-          {{ console.log('Swiper slide rendered') }}
+          {{ console.log("Swiper slide rendered") }}
         </swiper-slide>
       </swiper>
     </div>
@@ -110,9 +130,9 @@ export default {
     },
   },
   mounted() {
-  console.log('Swiper components initialized');
-  this.getData();
-},
+    console.log("Swiper components initialized");
+    this.getData();
+  },
   components: {
     Swiper,
     SwiperSlide,
@@ -143,11 +163,10 @@ body {
 }
 
 .about {
-  height: 240vh;
+  height: 200vh;
   margin: 0;
   margin-top: 100px;
 }
-
 
 .swiper-slide {
   text-align: center;
@@ -160,9 +179,9 @@ body {
   margin-right: 0;
 }
 .swiper-navigation {
-  widows: 200px ;
+  widows: 200px;
 }
-.swiper-pagination{
+.swiper-pagination {
   position: relative;
   top: 20px !important;
 }
@@ -194,8 +213,8 @@ body {
   color: #906046;
   font-weight: bolder;
 }
-.swiper-button-next{
-margin-left: 200px;
+.swiper-button-next {
+  margin-left: 200px;
 }
 .append-buttons button {
   display: inline-block;
@@ -221,8 +240,8 @@ margin-left: 200px;
 }
 #technical-skills {
   position: relative;
-  bottom: 180px;
-  left: -370px;
+  bottom: 80px;
+  left: -430px;
   font-size: 35px;
   font-family: "Cormorant", serif;
   font-optical-sizing: auto;
@@ -232,10 +251,10 @@ margin-left: 200px;
   color: #906046;
   text-decoration: underline;
 }
-.technical-skills-swiper{
+.technical-skills-swiper {
   position: relative;
-  left: -490px;
-  top: -10px
+  left: -530px;
+  top: 110px;
 }
 #card {
   display: inline-block;
@@ -244,7 +263,7 @@ margin-left: 200px;
   border: 1px solid #b98e77;
   border-radius: 10px;
   background-color: white;
-  width: 150px!important;
+  width: 150px !important;
   height: 130px;
   box-shadow: 6px 6px 6px #8e634c;
 }
@@ -261,7 +280,7 @@ margin-left: 200px;
   color: #906046;
   text-decoration: underline;
 }
-#softimage{
+#softimage {
   /* justify-content: center; */
   width: 50px;
   height: 50px;
@@ -269,7 +288,7 @@ margin-left: 200px;
   position: relative;
   left: 20px;
 }
-.soft-skills-swiper{
+.soft-skills-swiper {
   position: relative;
   /* left: -350px; */
 
@@ -277,7 +296,7 @@ margin-left: 200px;
 }
 #badges {
   position: relative;
-  top: 530px;
+  top: 370px;
   left: -630px;
   font-size: 35px;
   font-family: "Cormorant", serif;
@@ -288,20 +307,20 @@ margin-left: 200px;
   color: #906046;
   text-decoration: underline;
 }
-#badge{
+#badge {
   height: 180px;
 }
-#icon{
+#icon {
   color: #745646;
   position: relative;
   bottom: 20px;
 }
-.badges-swiper{
+.badges-swiper {
   position: relative;
-  top: 690px;
-  left: -740px;
+  top: 560px;
+  left: -540px;
 }
-.image{
+.image {
   width: 70px !important;
   height: 70px !important;
   margin-bottom: 30px;
@@ -389,7 +408,7 @@ margin-left: 200px;
 }
 #about {
   position: relative;
-  bottom: 750px;
+  bottom: 640px;
   left: 710px;
   font-family: "Cormorant", serif;
   font-optical-sizing: auto;
@@ -403,7 +422,7 @@ margin-left: 200px;
 #backgroundd {
   position: relative;
   width: 250%;
-  bottom: 500px;
+  bottom: 380px;
   background-color: #b98e77;
   color: white;
   height: auto;
@@ -456,10 +475,10 @@ margin-left: 200px;
   #skills {
     font-size: 25px;
   }
-  #about{
+  #about {
     position: relative;
     top: -340px;
-    left: 530px!important;
+    left: 530px !important;
   }
   #skills {
     position: relative;
@@ -511,7 +530,7 @@ margin-left: 200px;
     padding: 0;
     margin: 0;
   }
-  #backgroundd{
+  #backgroundd {
     position: relative;
     top: 130px;
     left: 320px;
@@ -522,11 +541,11 @@ margin-left: 200px;
     margin-left: 30px;
     margin-top: 60px;
   }
-  .technical-skills-swiper{
-  position: relative;
-  right: 50px;
-  top: 10px
-}
+  .technical-skills-swiper {
+    position: relative;
+    right: 50px;
+    top: 10px;
+  }
   #btn {
     width: 80px;
     font-size: 12px;
@@ -542,7 +561,7 @@ margin-left: 200px;
     width: auto !important;
     margin: 0 !important;
   }
-  #about{
+  #about {
     position: relative;
     bottom: 340px;
     left: 400px;
@@ -552,7 +571,7 @@ margin-left: 200px;
     font-size: 14px;
     margin-right: 20px;
   }
-  #backgroundd{
+  #backgroundd {
     position: relative;
     top: 130px;
     left: 200px;

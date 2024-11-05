@@ -4,7 +4,7 @@ export default createStore({
   state: {
     projects: null,
     education: null,
-    technicalskills: null,
+    skills: null,
     softskills: null,
     mybadges: null,
     testimonials: null,
@@ -19,8 +19,8 @@ export default createStore({
     setEducation(state, payload) {
       state.education = payload
     },
-    setTechnicalskills(state, payload) {
-      state.technicalskills = payload
+    setSkills(state, payload) {
+      state.skills = payload
     },
     setSoftskills(state, payload) {
       state.softskills = payload
@@ -42,10 +42,10 @@ export default createStore({
         let fetchedData = await fetch('https://nikilitha26.github.io/vue.js-API/API/data.json')
         let data = await fetchedData.json()
         console.log("Data fetched:", data);
-        let { projects, education, technicalskills, softskills, mybadges, testimonials, experience } = data
+        let { projects, education, skills, softskills, mybadges, testimonials, experience } = data
         commit('setProjects', projects)
         commit('setEducation', education)
-        commit('setTechnicalskills', technicalskills)
+        commit('setSkills', skills)
         commit('setSoftskills', softskills)
         commit('setMybadges', mybadges)
         commit('setTestimonials', testimonials)
